@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { AiOutlineSearch } from 'react-icons/ai'
 import Image from './assets/homeBanner.jpg'
@@ -8,8 +8,22 @@ import Image2 from './assets/Products Art.png'
 import Image3 from './assets/Products Offc.png'
 import Image4 from './assets/World Map.png'
 import Image5 from './assets/Luxor Journey.jpg'
+import Carasol from './Components/header/Carasol/Carasoul';
+import ArtGallery from './assets/images/Art Gallery.jpg'
+import ImageContainer from './Components/ImageContainer';
+import I1 from './assets/images/Look Book 1.jpg'
+import I2 from './assets/images/Look Book 2.jpg'
+import I3 from './assets/images/Look Book 3.jpg'
 
-function App() {
+function App() {  
+
+  useEffect(()=>{
+     document.getElementsByClassName(
+      'Art_gallery_button'
+     )[0].innerHTML="Art Gallery"
+      
+
+  })
   return (
     <>
       <header >
@@ -48,12 +62,19 @@ function App() {
 
       </nav>
 
-      <section className='background'>
+    {/*  <section className='background'>
         <div className='backgroundImage'>
           <img src={Image} alt='' />
         </div>
 
       </section>
+  */}
+
+   
+  <Carasol />
+
+
+      
       <section className="home" >
 
         <div className="home1-img ">
@@ -176,6 +197,94 @@ function App() {
 
         </div></div>
       </section>
+
+
+      <section className='luxor-container'>
+      <div class="heading">
+          <h2 style={{
+             lineHeight:"80%" ,
+             color:"green",
+             fontSize:"70px"
+          }}>Let's save the <br /> environment with Luxor</h2>
+        </div>
+        <div className='home-container'>
+        <div className="homeImg-luxor ">
+        <p style={{
+           padding:"70px",
+           fontSize:"25px",
+           color:"rgba(61, 57, 59, 0.69)"
+        }}>
+         
+        Evolution of humans has done nothing but harm to our planet, the number of non-biodegradable dumps we have 
+made is turning our planet hostile and non-biodegradable & plastic products are the prime reasons behind our
+planet's vulnerability. Acknowledging the harm we have caused to our planet has made everyone quite aware & active 
+about following ways to endure a life without causing loss to our surroundings and therefore the demand for 
+eco-friendly products is on rise, especially in the international market.
+ <br />  <br />
+Luxor International takes a step ahead with an e‘ort & aim to help our planet breathe well, by adding stationeries that 
+are made of recycled materials to our range of drawing and writing instruments
+
+</p>
+        </div></div>
+      </section>
+
+ <div className='art-gallery'>
+  <div className='Art_gallery_button'>
+   </div>
+
+   <img src={ArtGallery} style={{
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+   }} alt="" />
+  
+ </div>
+
+
+ <section className='luxor-container'>
+ <div class="heading">
+     <h2 style={{
+        lineHeight:"80%" ,
+        color:"red",
+        fontSize:"70px" ,
+        margin:"50px 0px"
+
+     }}>Look Book  </h2>
+   </div> 
+
+
+   <div className='home-container'>
+   <div className="homeImg-luxor ">
+   <p style={{
+      padding:"70px",
+      fontSize:"25px",
+      color:"rgba(61, 57, 59, 0.69)"
+   }}>
+
+ <div style={{
+  display:"flex",
+  gap:"150px",
+ }}>
+ <ImageContainer  src={I1} t1="up your presentation " t2 =   "Game" />
+ <ImageContainer  src={I2} t1="Spark your creativity with" t2 =   "Luxor pens" />
+ <ImageContainer  src={I3} t1="How to choose the  " t2 =   "Best highlighter pen " />
+  
+ </div>
+   
+
+
+</p>
+   </div></div>
+ </section>
+
+
+
+
+
+
+
+
+
 
     </>
   );

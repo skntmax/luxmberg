@@ -461,3 +461,25 @@ input {
 ::-webkit-scrollbar {
   display: none;
 }
+
+
+.Art_gallery_button{
+  position: absolute;
+  border-radius: 60px;
+   color: red;
+   background-color:red;
+   text-align: center;
+   color:white;
+   width: 400px;
+   height: 100px;
+   z-index: 1;
+   right: 360px;
+   top:280px;
+   padding: -3px;
+   font-size: 65px;
+   font-weight: bolder;
+}
+
+.art-gallery{
+   position: relative;
+}

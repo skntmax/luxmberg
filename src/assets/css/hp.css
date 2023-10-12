@@ -1,0 +1,15 @@
+.image_cont{
+     position: relative;
+}
+
+.img_abs{
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    color:aliceblue;
+     z-index: 1;
+     top: 40%;
+     left:5%
+
+    
+}
