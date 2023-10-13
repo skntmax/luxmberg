@@ -333,7 +333,7 @@ input {
 .prodBackground::before {
   content: "";
   background-image: url('./assets/Lineart.png');
-  opacity: 9%; 
+  opacity: 9%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -364,7 +364,7 @@ input {
   margin-top: -185px;
   position: absolute;
   width: 100%;
-  
+
 }
 
 .heading1 h2 {
@@ -374,7 +374,7 @@ input {
   padding-top: 2rem;
 }
 
-.product-box  {
+.product-box {
   padding: 20px;
   width: 325px;
   height: 20rem;
@@ -384,8 +384,9 @@ input {
   text-align: center;
   background-size: contain;
   background: #fff;
-  
+
 }
+
 .product-box:hover {
   box-shadow: 0px 7px 20px rgba(14 55 54/55%);
 }
@@ -427,7 +428,7 @@ input {
 
 .exported {
   width: 100%;
- 
+
 }
 
 .home-container {
@@ -435,7 +436,7 @@ input {
   width: 100%;
   align-items: center;
   justify-content: center;
-  
+
 }
 
 .homeImg img {
@@ -450,14 +451,340 @@ input {
   width: 100%;
 }
 
-.homeImg-luxor img{
+.homeImg-luxor img {
   width: 100%;
   background-size: contain;
   position: relative;
   padding: 30px 0px;
- 
+
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
+
+/* ------------------------------------Environment Section------------------------------------------------ */
+
+.environment-container {}
+
+.env-heading h2 {
+  color: rgb(53, 148, 53);
+  font-size: 2.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+.env-para {
+  margin: 20px 10% 25px 10%;
+}
+
+/* --------------------------------------- */
+
+.art-gallery {
+  width: 100%;
+  height: 60vh;
+  margin: 15px 0 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.art-img img {
+  height: 100%;
+  width: 50vw;
+}
+
+.art-btn {  
+  left: 45%;
+  position: absolute;
+}
+
+.art-btn button {
+  color: rgb(255, 255, 255);
+  padding: 1vw 4vw 1vw 4vw;
+  font-weight: 600;
+  border-radius: 70px;
+  background-color: #ed1b24;
+  font-size: 3vw;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* -------------------------------------------look book-------------------------------------------------------- */
+
+.look-book-container {
+  margin-top: 60px;
+}
+
+.look-heading h2 {
+  color: #ed1b24;
+  font-size: 2.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+.look-book-suggest {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.look-img-cont {
+  width: 30vw;
+  height: 50vh;
+  margin-top: 20px;
+  /* margin-bottom: 20px; */
+}
+
+.look-img-cont img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: contain; */
+}
+
+/* -------------------------------------------- */
+
+.ugc-book-suggest {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap:20px;
+  /* justify-content: space-evenly; */
+}
+
+.ugc-img-cont {
+  width: 50vw;
+  height: 70vh;
+  /* margin-top: 20px; */
+  /* margin-bottom: 20px; */
+}
+
+.ugc-img-cont img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: contain; */
+}
+
+.ugc-img-cont2 {
+  width: 30vw;
+  height: 53vh;
+  margin-top: 83px;
+  /* margin-bottom: 20px; */
+}
+
+.ugc-img-cont2 img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: contain; */
+}
+
+/* ---------------------------------------------organisation container---------------------------------------------- */
+
+.organisation-container {
+  margin-top: 20px;
+}
+
+.org-heading h2 {
+  color: #ed1b24;
+  font-size: 2.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+.org-main {
+  display: flex;
+  align-items: center;
+}
+
+.org-btn-cont {
+  display: flex;
+  padding-right: 40px;
+  height: 0%;
+  width: 10%;
+  transform: rotate(-90deg);
+}
+
+.org-btn-1 {
+  padding-right: 0;
+}
+
+.org-btn-1 button {
+  color: #fff;
+  padding: 0.3vw 1.2vw 0.3vw 1.2vw;
+  font-weight: 500;
+  background-color: #ed1b24;
+  width: 13.8vw;
+  font-size: 2vw;
+  cursor: pointer;
+  border: none;
+}
+
+.org-btn-2 button {
+  color: black;
+  padding: 0.3vw 1.3vw 0.3vw 1.3vw;
+  font-weight: 500;
+  background-color: #fff;
+  border: 1px solid black;
+  width: 13.8vw;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+.org-img-cont {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
+}
+
+.org-img-card {
+  width: 30vw;
+  height: 50vh;
+  margin-top: 20px;
+  /* margin-bottom: 20px; */
+}
+
+.org-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+
+/* ----------------------------------------------about luxor-------------------------------------- */
+
+.about-luxor-container {}
+
+.luxor-heading h2 {
+  color: #ed1b24;
+  font-size: 2.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+.client-detail {}
+
+.client-img {}
+
+.luxor-review {}
+
+.arrow-btn {}
+
+.arrow-btn-left {}
+
+.arrow-btn-left {}
+
+/* ------------------------------------ */
+
+.dyk-container {}
+
+.dyk-banner {}
+
+.dyk-banner1 {}
+
+.dyk-banner2 {}
+
+.dyk-scroll {}
+
+.arrow-btn-left {}
+
+.arrow-btn-left {}
+
+/* ------------------------------------------------foooter section------------------------------------------- */
+
+.footer {}
+
+.footer-heading1 h2 {
+  color: #ed1b24;
+  font-size: 2.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-btn {}
+
+.footer-btn1 button {
+  color: black;
+  padding: 0.3vw 1.3vw 0.3vw 1.3vw;
+  font-weight: 500;
+  background-color: #fff;
+  border: 1px solid black;
+  width: 13.8vw;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+.footer-btn2 button {
+  color: #fff;
+  padding: 0.3vw 1.2vw 0.3vw 1.2vw;
+  font-weight: 500;
+  background-color: #ed1b24;
+  width: 13.8vw;
+  font-size: 2vw;
+  cursor: pointer;
+  border: none;
+}
+
+/* ---------------------------------- */
+
+.certi-heading h2 {
+  color: #ed1b24;
+  font-size: 2.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+.certi-img {}
+
+.certi-img1 {}
+
+.certi-img2 {}
+
+.certi-img3 {}
+
+.certi-img4 {}
+
+/* -------------------------------------- */
+
+.award-heading h2 {
+  color: #ed1b24;
+  font-size: 2.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+.award-img-cont {}
+
+.award-img {}
+
+/* -------------------------------------- */
+
+.footer-copyright {
+  background-color: #ed1b24;
+  height: 4vw;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyright-para p {
+  color: #fff;
+  font-size: larger;
+  font-weight: 300;
+}
+
+.footer-icon {}
+
