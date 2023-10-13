@@ -84,6 +84,7 @@ header {
 
 a {
   display: inline-block;
+  text-decoration: none;
 }
 
 li~a {
@@ -604,14 +605,17 @@ input {
 
 .org-btn-cont {
   display: flex;
-  padding-right: 40px;
-  height: 0%;
-  width: 10%;
-  transform: rotate(-90deg);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40%;
+  /* padding-right: 40px; */
+  /* transform: rotate(-90deg); */
 }
 
 .org-btn-1 {
-  padding-right: 0;
+  transform: rotate(-90deg);
 }
 
 .org-btn-1 button {
@@ -623,6 +627,10 @@ input {
   font-size: 2vw;
   cursor: pointer;
   border: none;
+}
+
+.org-btn-2 {
+  transform: rotate(-90deg);
 }
 
 .org-btn-2 button {
@@ -661,21 +669,92 @@ input {
 
 /* ----------------------------------------------about luxor-------------------------------------- */
 
-.about-luxor-container {}
+.about-luxor-container {
+  margin-top: 40px;
+  padding-top: 40px;
+  height: 70vh;
+  background-color: #ed1b24;
+}
 
 .luxor-heading h2 {
-  color: #ed1b24;
-  font-size: 2.8rem;
-  font-weight: 600;
+  color: #fff;
+  font-size: 3.8rem;
+  font-weight: 500;
   display: flex;
   justify-content: center;
 }
 
-.client-detail {}
+.client {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.client-detail {
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5%;
+}
+
+.client-img {
+  height: 50%;
+  width: 50%;
+  border-radius: 50%;
+  padding: 0 25px 0 25px;
+  background-color: rgb(180, 20, 20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.round-div {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  border-radius: 50%
+}
+
+.round-div img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.client-detail h3 {
+  color: #fff;
+
+}
+
+.client-detail p {
+  color: #fff;
+  /* margin-top: 50px; */
+}
 
 .client-img {}
 
-.luxor-review {}
+.luxor-review {
+  width: 60vw;
+  /* display: flex; */
+  align-items: center;
+  padding-right: 10%;
+  /* justify-content: center; */
+}
+
+.luxor-review h3 {
+  color: #fff;
+  font-size: 3vw;
+}
+
+.luxor-review p {
+  color: #fff;
+  font-size: 1.5vw;
+  /* margin-top: 50px; */
+}
+
 
 .arrow-btn {}
 
@@ -685,15 +764,35 @@ input {
 
 /* ------------------------------------ */
 
-.dyk-container {}
+.dyk-container {
+  height: 50vh;
+  margin-top: 20px;
+  background-color: #ed1b24;
+  display: flex;
+  align-items: center;
+}
 
-.dyk-banner {}
+.dyk-banner {
+  width: 45vw;
+  padding: 10%;
+}
 
-.dyk-banner1 {}
+.dyk-banner1 img {
+  width: 100%;
+  height: 100%;
+}
 
 .dyk-banner2 {}
 
-.dyk-scroll {}
+.dyk-scroll {
+  width: 55vw;
+}
+
+.dyk-scroll h4 {
+  font-size: 1.7vw;
+  color: #fff;
+  padding-right: 25%;
+}
 
 .arrow-btn-left {}
 
@@ -701,7 +800,9 @@ input {
 
 /* ------------------------------------------------foooter section------------------------------------------- */
 
-.footer {}
+.footer {
+  padding-top: 40px;
+}
 
 .footer-heading1 h2 {
   color: #ed1b24;
@@ -711,7 +812,24 @@ input {
   justify-content: center;
 }
 
-.footer-btn {}
+.partner-cont {
+  height: 70vh;
+  width: 100%;
+  padding: 0 10% 0 10% ;
+  margin-top: 2%;
+}
+
+.partner-cont img {
+  height: 100%;
+  width: 100%;
+}
+
+.footer-btn {
+  display: flex;
+  margin-top: 3%;
+  justify-content: center;
+  gap: 5%;
+}
 
 .footer-btn1 button {
   color: black;
@@ -737,23 +855,50 @@ input {
 
 /* ---------------------------------- */
 
+.background {
+  position: relative;
+}
+
+.back-img {
+  /* background-image: url(assets/images/Line art.png); */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -9;
+  filter: opacity(0.10);
+}
+
+.back-img img {
+  height: 100%;
+  width: 100%
+  /* filter: opacity(0.20); */
+}
+
 .certi-heading h2 {
   color: #ed1b24;
   font-size: 2.8rem;
   font-weight: 600;
   display: flex;
   justify-content: center;
+  margin-top: 3%;
 }
 
-.certi-img {}
+.certi-img-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+}
 
-.certi-img1 {}
+.certi-img-card {
+  height: 50%;
+}
 
-.certi-img2 {}
+.certi-img-card img {
+  height: 100%;
+  width: 75%;
+}
 
-.certi-img3 {}
-
-.certi-img4 {}
 
 /* -------------------------------------- */
 
@@ -763,11 +908,44 @@ input {
   font-weight: 600;
   display: flex;
   justify-content: center;
+  margin-top: 3%;
 }
 
-.award-img-cont {}
+.award-img-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  margin-top: 2%;
+  padding-bottom: 3%;
+  /* position: relative; */
+}
 
-.award-img {}
+.award-img {
+  /* width: 100%; */
+  height: 50%;
+}
+
+.award-img img {
+  width: 80%;
+  height: 100%;
+}
+
+.pen-pointer {
+  height: 10%;
+  width: 9%;
+  padding: 10px;
+  position: relative;
+  bottom: 50px;
+  /* bottom: 350px; */
+  left: -90px;
+  margin-left: 0;
+}
+
+.pen-pointer img {
+  height: 100%;
+  width: 100%;
+}
 
 /* -------------------------------------- */
 
@@ -784,7 +962,29 @@ input {
   color: #fff;
   font-size: larger;
   font-weight: 300;
+  align-items: center;
 }
 
 .footer-icon {}
 
+
+.Art_gallery_button{
+  position: absolute;
+  border-radius: 60px;
+   color: red;
+   background-color:red;
+   text-align: center;
+   color:white;
+   width: 400px;
+   height: 100px;
+   z-index: 1;
+   right: 360px;
+   top:280px;
+   padding: -3px;
+   font-size: 65px;
+   font-weight: bolder;
+}
+
+.art-gallery{
+   position: relative;
+}
