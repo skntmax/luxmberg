@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { AiOutlineSearch } from 'react-icons/ai'
-
+import marker_pen from './assets/marker.png'
 import { Tween } from 'react-gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
@@ -57,7 +57,8 @@ function App() {
 
         let text_div = document.querySelectorAll(".home-text");
         let sections = document.querySelectorAll(".home1-img img");
-    
+        let new_launch = document.querySelectorAll("new_launch");
+        
 
         gsap.to(sections,
         {  
@@ -110,11 +111,50 @@ function App() {
 
 
 
-   
-  
+              newLaumch()
       
-    })
+    } ,[])
 
+
+    function newLaumch(){
+         
+        let new_launch = document.querySelectorAll(".new_launch");
+        let marker_marks = document.querySelectorAll(".marker_marks");
+        
+        // gsap.to(new_launch,
+        //      {  
+        //         duration:2,
+        //         x:100,
+        //     scrollTrigger: {
+        //         trigger: marker_marks,
+        //         markers: true,
+        //         onToggle: self => console.log("toggled, isActive:", self.isActive),
+        //         start: "top 70%",
+        //         end: "bottom 50%",
+        //         markers: true,
+        //           },    
+        //       });
+
+        //       gsap.to(new_launch,
+        //         {  
+        //            duration:2,
+        //            x:100,
+        //            backgroundColor:"yellow",
+        //          scrollTrigger: {
+        //            trigger: new_launch,
+        //            markers: true,
+        //            onToggle: self => console.log("toggled, isActive:", self.isActive),
+        //            start: "top 70%",
+        //            end: "bottom 50%",
+        //            markers: true,
+        //              },    
+        //          });
+    
+              
+
+
+
+    }
     
     function drawPen(pen_div , pen_image_div , pen_draw_div,  pen_colour) {
 
@@ -156,7 +196,6 @@ function App() {
                 let Image =  document.querySelectorAll(pen_image_div)
                 let marker_line = document.querySelectorAll(pen_draw_div)
 
-            
                     gsap.to( penDiv , {
                         backgroundColor:"white",
                         scale:1 , 
@@ -273,7 +312,19 @@ function App() {
             <section className='launch'>
                 <div class="heading">
                     
-                        <h2 className='new_launch'>New Launches</h2>
+                        
+                        <h2 className='new_launch'>
+{/*                             
+                            <span  style={{
+                                    width: "100px",
+                                height: "20px",
+                                background: "yellow",
+                            }} >  
+                            <img src={marker_pen} width={200}  className='marker_marks'/>
+                            
+                             </span> */}
+                         New Launches
+                        </h2>
 
                 </div>
                 <div className='carouselItem'>

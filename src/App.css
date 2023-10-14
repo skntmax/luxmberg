@@ -1015,3 +1015,10 @@ input {
   border-top: 2px solid white;
   border-radius: 10px;
 }
+
+.new_launch{
+   position: relative;
+}
+.marker_marks{
+   position: absolute;
+}
