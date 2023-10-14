@@ -6,11 +6,14 @@ import productimg1 from './../assets/product1.png'
 import marker from './../assets/marker.png'
 import popular1 from './../assets/popular1.png'
 import popular2 from './../assets/popular2.png'
+import { Link } from 'react-router-dom'
 
 const ProductPage = () => {
     return (
         <>
-         
+
+ <div>
+     
 
             <header >
                 <a href='#' className='logo'>
@@ -41,15 +44,14 @@ const ProductPage = () => {
                         </a>
                     </li>
 
-                    <li><a href="#skills">Product</a></li>
+                    <li><Link href="/product">Product</Link></li>
                     <li><a href="#services">E- Catalogue</a></li>
                     <li><a href="#contact">Media</a></li>
                     <li><a href="#contact">Art Gallery</a></li>
                     <li><a href="#contact">Career</a></li>
-
                 </ul>
-
             </nav>
+ </div>
 
 
             <section className='productItem'>
@@ -77,20 +79,7 @@ const ProductPage = () => {
                     </div>
                 </div>
 
-                {/* <div className='productmarker'>
-                    <img src={marker} />
-                </div>
-                <div className='markerheading'>
-                    <div class="headingmar" style={{ display: "contents" }}>
-                        <h2>BROADLINE MARKER</h2>
-                        <p>Kids love Luxor Broadline Markers because they are durable, sturdy, and delightful
-                            to color with. They come in 12 lovely colors, are washable, non-toxic and don't bleed
-                            through most paper.</p>
-                    </div>
-                    <div>
-                        <h3>Available Colors</h3>
-                    </div>
-                </div> */}
+              
             </section>
             <section>
                 <div className='products'>

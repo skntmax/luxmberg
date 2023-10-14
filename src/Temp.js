@@ -39,6 +39,7 @@ import Image24 from './assets/award2.png'
 import Image25 from './assets/award3.png'
 import Image26 from './assets/Lineart.png'
 import Image27 from './assets/pennib.png'
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,16 +49,11 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
 
 
-
-
-
-
     useEffect(() => {
-        document.getElementsByClassName(
+
+         document.getElementsByClassName(
             'Art_gallery_button'
         )[0].innerHTML = "Art Gallery"
-
-
 
         let text = document.querySelectorAll(".home-text");
         let sections = gsap.utils.toArray(".home1-img img");
@@ -118,6 +114,55 @@ function App() {
     })
 
     
+    function drawPen(pen_div , pen_image_div) {
+
+        let penDiv = document.querySelectorAll(pen_div    );
+        let Image = gsap.utils.toArray(pen_image_div)
+
+         gsap.to( penDiv , {
+            //  backgroundColor:"red",
+             width:300,
+            scale:1 , 
+            dirat1ion:2
+         } )
+
+           gsap.to( Image , {
+            //  backgroundColor:"red",
+            x:100,
+            width:300,
+            height:"86%",
+            scale:1 , 
+            dirat1ion:2
+         } )
+ 
+            }
+
+
+             function removeDrawPen(pen_div , pen_image_div) {
+                let penDiv = document.querySelectorAll(pen_div    );
+                let Image = gsap.utils.toArray(pen_image_div)
+            
+                    gsap.to( penDiv , {
+                        backgroundColor:"white",
+                        scale:1 , 
+                        diration:0,
+                        width:245,
+                    } )
+
+                    gsap.to( Image , {
+                        //  backgroundColor:"red",
+                        x:0,
+                        width:245,
+                        height:"86%",
+                        scale:1 , 
+                        dirat1ion:2,
+                        yoyo:true
+                     } )
+                     
+
+
+}
+ 
     return (
         <>
             <header >
@@ -155,7 +200,7 @@ function App() {
                         </a>
                     </li>
 
-                    <li><a href="#skills">Product</a></li>
+                    <li><Link to="/product">Product</Link></li>
                     <li><a href="#services">E- Catalogue</a></li>
                     <li><a href="#contact">Media</a></li>
                     <li><a href="#contact">Art Gallery</a></li>
@@ -205,7 +250,10 @@ function App() {
                     <h2>New Launches</h2>
                 </div>
                 <div className='carouselItem'>
-                    <div className='posterBlock'>
+                    <div className='posterBlock1' 
+                           onMouseEnter={(e)=>  drawPen(".posterBlock1" , ".posterBlock1 img")}
+                                 onMouseLeave={() =>removeDrawPen(".posterBlock1" , ".posterBlock1 img") }
+                    >
                         <img src="https://luxorpen.com/images/bp/xonox-bp/black-m.jpg" />
                         <div className='textBlock'>
                             <span className='title'>
@@ -215,21 +263,30 @@ function App() {
 
                     </div>
 
-                    <div className='posterBlock'>
+                    <div className='posterBlock2'
+                  onMouseEnter={(e)=>  drawPen(".posterBlock2" , ".posterBlock2 img")}
+                                 onMouseLeave={() =>removeDrawPen(".posterBlock2" , ".posterBlock2 img") }
+                    >
                         <img src="	https://luxorpen.com/images/hl/textliter-hl/text-li-green-m.jpg" />
                         <div className='textBlock'>
                             <span className='title'>
                                 Highliter
                             </span></div>
                     </div>
-                    <div className='posterBlock'>
+                    <div className='posterBlock3'
+                     onMouseEnter={(e)=>  drawPen(".posterBlock3" , ".posterBlock3 img")}
+                                 onMouseLeave={() =>removeDrawPen(".posterBlock3" , ".posterBlock3 img") }
+                    >
                         <img src="https://luxorpen.com/images/wb/wb-450/wb450-blue.jpg" />
                         <div className='textBlock'>
                             <span className='title'>
                                 White Board Markers
                             </span></div>
                     </div>
-                    <div className='posterBlock'>
+                    <div className='posterBlock4'
+            onMouseEnter={(e)=>  drawPen(".posterBlock4" , ".posterBlock4 img")}
+                                 onMouseLeave={() =>removeDrawPen(".posterBlock4" , ".posterBlock4 img") }
+                    >
                         <img src="	https://luxorpen.com/images/pm/pm-1222/pm1222-blue.jpg" />
                         <div className='textBlock'>
                             <span className='title'>
