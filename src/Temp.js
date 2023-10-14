@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { AiOutlineSearch } from 'react-icons/ai'
+// import { TweenMax, Power3 } from 'gsap';
+import { gsap } from "gsap";
 import Image from './assets/homeBanner.jpg'
 import worldMap from './assets/map.png'
 import Image1 from './assets/Products School.png'
@@ -38,20 +40,35 @@ import Image27 from './assets/pennib.png'
 
 
 
-
-
-
-
-
-
-
 function App() {
+
+
+
+    gsap.to(".home1-img img", {
+        x: 3,
+        stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
+        duration: 1.5,
+        delay:1,
+        opacity: 1,
+        marginLeft: 5,
+
+        // backgroundColor: "red"
+      });
+
+       gsap.from(".home1-img img", {
+        // x: 220,
+        // stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
+        // duration: 2,
+        opacity: 0,
+        // delay:2,
+        // backgroundColor: "red"
+      });
+
 
     useEffect(() => {
         document.getElementsByClassName(
             'Art_gallery_button'
         )[0].innerHTML = "Art Gallery"
-
 
     })
     return (
