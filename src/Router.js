@@ -8,6 +8,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import ProductPage from "./Components/Product";
 
 const router = createBrowserRouter([
   {
@@ -17,8 +18,8 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "about",
-    element: <div>About</div>,
+    path: "product",
+    element: <ProductPage />,
   },
 ])
 

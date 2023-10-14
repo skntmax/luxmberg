@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { AiOutlineSearch } from 'react-icons/ai'
+
+import { Tween } from 'react-gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 // import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
 import Image from './assets/homeBanner.jpg'
@@ -36,7 +40,7 @@ import Image25 from './assets/award3.png'
 import Image26 from './assets/Lineart.png'
 import Image27 from './assets/pennib.png'
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 
 
@@ -45,12 +49,15 @@ function App() {
 
 
 
-    
+
+
 
     useEffect(() => {
         document.getElementsByClassName(
             'Art_gallery_button'
         )[0].innerHTML = "Art Gallery"
+
+
 
         let text = document.querySelectorAll(".home-text");
         let sections = gsap.utils.toArray(".home1-img img");
@@ -59,11 +66,8 @@ function App() {
         if (text && sections) {
             sections.forEach((element, i) => {
               let textItem = text[i];
-           
 
               gsap.to(".home1-img img",
-
-
               {
               scrollTrigger: {
                   trigger: ".home1-img img",
@@ -117,6 +121,9 @@ function App() {
     return (
         <>
             <header >
+
+               
+
                 <a href='#' className='logo'>
                     <img src='https://luxorpen.com/images/logo/logo.png' />
                 </a>
@@ -131,6 +138,8 @@ function App() {
                 </div>
 
             </header>
+
+
             <nav>
 
                 <ul className='navbar'>
