@@ -55,69 +55,72 @@ function App() {
             'Art_gallery_button'
         )[0].innerHTML = "Art Gallery"
 
-        let text = document.querySelectorAll(".home-text");
-        let sections = gsap.utils.toArray(".home1-img img");
+        let text_div = document.querySelectorAll(".home-text");
+        let sections = document.querySelectorAll(".home1-img img");
     
 
-        if (text && sections) {
-            sections.forEach((element, i) => {
-              let textItem = text[i];
+        gsap.to(sections,
+        {  
+            duration:2,
+            x:-150,
+            repeat:-1,
+            yoyo:true,
+        scrollTrigger: {
+            trigger: sections,
+            markers: true,
+            onToggle: self => console.log("toggled, isActive:", self.isActive),
+            start: "top 70%",
+            end: "bottom 50%",
+            markers: true,
+              },    
+          });
 
-              gsap.to(".home1-img img",
-              {
-              scrollTrigger: {
-                  trigger: ".home1-img img",
-                  markers: true,
-                  start: -220,
-                  onToggle: self => console.log("toggled, isActive:", self.isActive),
-                  trigger: element,
-                  start: "top 50%",
-                  end: "bottom 50%",
-                  markers: true,
-                  onEnter: () => {
-                    console.log("entered: ");
-                    console.log(textItem);
-                    textItem.classList.add("active-trigger");
-                    console.log(textItem.classList);
-                   }
-                },
-                autoAlpha: 1,
-                  x: -10, 
-                  stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
-                  duration: 1.5,
-                  delay:1,
-                  opacity: 1,
-                  marginLeft: 5
-                });
-                 gsap.from(".home1-img img", {
-                  x: 220,
-                  // stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
-                  // duration: 2,
-                  opacity: 0,
-                });
-          
-                gsap.fromTo('.home-text' , {
-                  x: -400,
-                  opacity: 0,
-          
-                 } , { 
-                  x: -0,
-                  opacity: 1,
-                  duration:2 
-                })
 
-             })
-            
-            }          
+           gsap.from(text_div, {
+            x: -220,
+            stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
+            duration: 2,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: text_div,
+                markers: true,
+                onToggle: self => console.log("toggled, isActive:", self.isActive),
+                start: "top 70%",
+                end: "bottom 50%",
+                markers: true,
+              },
+          });
+    
+          gsap.to(text_div , {
+            x: 70,
+            opacity: 1,
+            duration:2,
+            repeat:-1,
+            yoyo:true,
+            scrollTrigger: {
+                trigger: text_div,
+                markers: true,
+                onToggle: self => console.log("toggled, isActive:", self.isActive),
+                start: "top 70%",
+                end: "bottom 50%",
+                markers: true,
+              },
+    
+           })
+
+
+
+   
   
       
     })
 
     
-    function drawPen(pen_div , pen_image_div) {
+    function drawPen(pen_div , pen_image_div , pen_draw_div,  pen_colour) {
 
         let penDiv = document.querySelectorAll(pen_div    );
-        let Image = gsap.utils.toArray(pen_image_div)
+        let Image = document.querySelectorAll(pen_image_div)
+        let marker_line = document.querySelectorAll(pen_draw_div)
 
          gsap.to( penDiv , {
             //  backgroundColor:"red",
@@ -133,14 +136,26 @@ function App() {
             height:"86%",
             scale:1 , 
             dirat1ion:2
+           })
+
+         gsap.to( marker_line , {
+            //  backgroundColor:"red",
+           borderTop: `8px solid ${pen_colour}`,
+            width:100,
+            scale:1 , 
+            dirat1ion:2
          } )
+ 
+
  
             }
 
 
-             function removeDrawPen(pen_div , pen_image_div) {
+             function removeDrawPen(pen_div , pen_image_div, pen_draw_div,  pen_colour) {
                 let penDiv = document.querySelectorAll(pen_div    );
-                let Image = gsap.utils.toArray(pen_image_div)
+                let Image =  document.querySelectorAll(pen_image_div)
+                let marker_line = document.querySelectorAll(pen_draw_div)
+
             
                     gsap.to( penDiv , {
                         backgroundColor:"white",
@@ -158,7 +173,17 @@ function App() {
                         dirat1ion:2,
                         yoyo:true
                      } )
-                     
+                            
+                        gsap.to( marker_line , {
+                            //  backgroundColor:"red",
+                            borderTop: `8px solid ${pen_colour}`,
+                            x:0,
+                            width:0,
+                            scale:1 , 
+                            dirat1ion:2
+                        } )
+ 
+
 
 
 }
@@ -247,48 +272,55 @@ function App() {
 
             <section className='launch'>
                 <div class="heading">
-                    <h2>New Launches</h2>
+                    
+                        <h2 className='new_launch'>New Launches</h2>
+
                 </div>
                 <div className='carouselItem'>
                     <div className='posterBlock1' 
-                           onMouseEnter={(e)=>  drawPen(".posterBlock1" , ".posterBlock1 img")}
-                                 onMouseLeave={() =>removeDrawPen(".posterBlock1" , ".posterBlock1 img") }
+                           onMouseEnter={(e)=>  drawPen(".posterBlock1" , ".posterBlock1 img" ,  '.marker_line1' , "red")}
+                                 onMouseLeave={() =>removeDrawPen(".posterBlock1" , ".posterBlock1 img" , '.marker_line1' , "white" ) }
                     >
                         <img src="https://luxorpen.com/images/bp/xonox-bp/black-m.jpg" />
                         <div className='textBlock'>
+                        <div className='marker_line1'> </div>
                             <span className='title'>
                                 Ball / Gell Pens
+
                             </span>
                         </div>
 
                     </div>
 
                     <div className='posterBlock2'
-                  onMouseEnter={(e)=>  drawPen(".posterBlock2" , ".posterBlock2 img")}
-                                 onMouseLeave={() =>removeDrawPen(".posterBlock2" , ".posterBlock2 img") }
+                  onMouseEnter={(e)=>  drawPen(".posterBlock2" , ".posterBlock2 img" , '.marker_line2' , "green")}
+                                 onMouseLeave={() =>removeDrawPen(".posterBlock2" , ".posterBlock2 img" ,'.marker_line2' , "white" ) }
                     >
                         <img src="	https://luxorpen.com/images/hl/textliter-hl/text-li-green-m.jpg" />
                         <div className='textBlock'>
+                        <div className='marker_line2'> </div>
                             <span className='title'>
                                 Highliter
                             </span></div>
                     </div>
                     <div className='posterBlock3'
-                     onMouseEnter={(e)=>  drawPen(".posterBlock3" , ".posterBlock3 img")}
-                                 onMouseLeave={() =>removeDrawPen(".posterBlock3" , ".posterBlock3 img") }
-                    >
+                     onMouseEnter={(e)=>  drawPen(".posterBlock3" , ".posterBlock3 img" , '.marker_line3' , "blue")}
+                                 onMouseLeave={() =>removeDrawPen(".posterBlock3" , ".posterBlock3 img" ,'.marker_line3' , "white" ) }
+                             >
                         <img src="https://luxorpen.com/images/wb/wb-450/wb450-blue.jpg" />
                         <div className='textBlock'>
+                        <div className='marker_line3'> </div>
                             <span className='title'>
                                 White Board Markers
                             </span></div>
                     </div>
                     <div className='posterBlock4'
-            onMouseEnter={(e)=>  drawPen(".posterBlock4" , ".posterBlock4 img")}
-                                 onMouseLeave={() =>removeDrawPen(".posterBlock4" , ".posterBlock4 img") }
+            onMouseEnter={(e)=>  drawPen(".posterBlock4" , ".posterBlock4 img" , '.marker_line4' ,  "black")}
+                                 onMouseLeave={() =>removeDrawPen(".posterBlock4" , ".posterBlock4 img" ,'.marker_line4' , "white" ) }
                     >
                         <img src="	https://luxorpen.com/images/pm/pm-1222/pm1222-blue.jpg" />
                         <div className='textBlock'>
+                        <div className='marker_line4'> </div>
                             <span className='title'>
                                 Permanent Markers
                             </span></div>
