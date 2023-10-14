@@ -36,6 +36,7 @@ import Image25 from './assets/award3.png'
 import Image26 from './assets/Lineart.png'
 import Image27 from './assets/pennib.png'
 
+// gsap.registerPlugin(ScrollTrigger);
 
 
 
@@ -44,33 +45,75 @@ function App() {
 
 
 
-    gsap.to(".home1-img img", {
-        x: 3,
-        stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
-        duration: 1.5,
-        delay:1,
-        opacity: 1,
-        marginLeft: 5,
-
-        // backgroundColor: "red"
-      });
-
-       gsap.from(".home1-img img", {
-        // x: 220,
-        // stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
-        // duration: 2,
-        opacity: 0,
-        // delay:2,
-        // backgroundColor: "red"
-      });
-
+    
 
     useEffect(() => {
         document.getElementsByClassName(
             'Art_gallery_button'
         )[0].innerHTML = "Art Gallery"
 
+        let text = document.querySelectorAll(".home-text");
+        let sections = gsap.utils.toArray(".home1-img img");
+    
+
+        if (text && sections) {
+            sections.forEach((element, i) => {
+              let textItem = text[i];
+           
+
+              gsap.to(".home1-img img",
+
+
+              {
+              scrollTrigger: {
+                  trigger: ".home1-img img",
+                  markers: true,
+                  start: -220,
+                  onToggle: self => console.log("toggled, isActive:", self.isActive),
+                  trigger: element,
+                  start: "top 50%",
+                  end: "bottom 50%",
+                  markers: true,
+                  onEnter: () => {
+                    console.log("entered: ");
+                    console.log(textItem);
+                    textItem.classList.add("active-trigger");
+                    console.log(textItem.classList);
+                   }
+                },
+                autoAlpha: 1,
+                  x: -10, 
+                  stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
+                  duration: 1.5,
+                  delay:1,
+                  opacity: 1,
+                  marginLeft: 5
+                });
+                 gsap.from(".home1-img img", {
+                  x: 220,
+                  // stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
+                  // duration: 2,
+                  opacity: 0,
+                });
+          
+                gsap.fromTo('.home-text' , {
+                  x: -400,
+                  opacity: 0,
+          
+                 } , { 
+                  x: -0,
+                  opacity: 1,
+                  duration:2 
+                })
+
+             })
+            
+            }          
+  
+      
     })
+
+    
     return (
         <>
             <header >

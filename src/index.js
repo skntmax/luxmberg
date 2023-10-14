@@ -4,12 +4,22 @@ import './index.css';
 import App from './App';
 import Temp from './Temp'
 import reportWebVitals from './reportWebVitals';
+import { createRoot } from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
+import router from './Router'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-     <Temp />
+
+    <RouterProvider router={router} />
+
   </React.StrictMode>
 );
 
