@@ -69,6 +69,8 @@ function App() {
         scrollTrigger: {
             trigger: sections,
             markers: true,
+            toggleActions:"restart pause resume reset", 
+
             onToggle: self => console.log("toggled, isActive:", self.isActive),
             start: "top 70%",
             end: "bottom 50%",
@@ -85,6 +87,8 @@ function App() {
             scrollTrigger: {
                 trigger: text_div,
                 markers: true,
+                toggleActions:"restart pause resume reset", 
+
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
@@ -101,6 +105,8 @@ function App() {
             scrollTrigger: {
                 trigger: text_div,
                 markers: true,
+                toggleActions:"restart pause resume reset", 
+
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
@@ -119,36 +125,52 @@ function App() {
     function newLaumch(){
          
         let new_launch = document.querySelectorAll(".new_launch");
-        let marker_marks = document.querySelectorAll(".marker_marks");
+        let pen_marker_line = document.querySelectorAll(".pen_marker_line");
         
-        // gsap.to(new_launch,
-        //      {  
-        //         duration:2,
-        //         x:100,
-        //     scrollTrigger: {
-        //         trigger: marker_marks,
-        //         markers: true,
-        //         onToggle: self => console.log("toggled, isActive:", self.isActive),
-        //         start: "top 70%",
-        //         end: "bottom 50%",
-        //         markers: true,
-        //           },    
-        //       });
+        let marker_marks = document.querySelectorAll(".new_launch_marker img");
+        
+        gsap.to(marker_marks,
+             {  
+                duration:2,
+                x:400,
+            scrollTrigger: {
+                trigger: marker_marks,
+                markers: true,
+                toggleActions:"restart pause resume reset", 
+                onToggle: self => console.log("toggled, isActive:", self.isActive),
+                start: "top 70%",
+                end: "bottom 20%",
+                markers: true,
+                  },    
+              });
 
-        //       gsap.to(new_launch,
-        //         {  
-        //            duration:2,
-        //            x:100,
-        //            backgroundColor:"yellow",
-        //          scrollTrigger: {
-        //            trigger: new_launch,
-        //            markers: true,
-        //            onToggle: self => console.log("toggled, isActive:", self.isActive),
-        //            start: "top 70%",
-        //            end: "bottom 50%",
-        //            markers: true,
-        //              },    
-        //          });
+              gsap.fromTo(pen_marker_line,{
+                    duration:2,
+                    width:0,
+                    opacity:5,
+              } ,
+
+              
+                {  
+                   duration:2,
+                   width:400,
+                   height: "100%",
+                   opacity:0,
+                   borderRadius:"  0 0 50% 50% ",
+                    height: "fit-content",
+                    backgroundColor: "rgba(99, 97, 7, 0.8)",
+                    zIndex:-2,
+                 scrollTrigger: {
+                   trigger: pen_marker_line,
+                   markers: true,
+                  toggleActions:"restart pause resume restart", 
+
+                   onToggle: self => console.log("toggled, isActive:", self.isActive),
+                   start: "top 70%",
+                   end: "bottom 50%",
+                   markers: true,
+                     },    
+                 });
     
               
 
@@ -313,18 +335,43 @@ function App() {
                 <div class="heading">
                     
                         
-                        <h2 className='new_launch'>
-{/*                             
-                            <span  style={{
-                                    width: "100px",
-                                height: "20px",
-                                background: "yellow",
-                            }} >  
-                            <img src={marker_pen} width={200}  className='marker_marks'/>
+
+                        <div style={{
+                            display:'flex',
+                            width:"100vw",
+                       alignItems:"center",
+                            justifyContent:"center",
+                        }}>
+                        
+
+                                <span  className='new_launch_marker' style={{  
+                                                position:"relative",
+                                                width: "100px",
+                                                zIndex:"1"
+                                        }} >  
+             
+                        <div className='pen_marker_line'  >
+                        <img src={marker_pen} width={200} 
+                            style={{
+                                position:"relative",
+                            }} className='marker_marks'/>
+
+                            </div>
                             
-                             </span> */}
+                                            </span>
+
+                        <h3 className='new_launch '>
+
+                          
+                         
+                      
                          New Launches
-                        </h2>
+                        </h3>
+
+
+                             
+                        </div>
+                      
 
                 </div>
                 <div className='carouselItem'>

@@ -1019,6 +1019,12 @@ input {
 .new_launch{
    position: relative;
 }
+
 .marker_marks{
    position: absolute;
+}
+
+.pen_marker_line{
+  z-index: "2",
+
 }
