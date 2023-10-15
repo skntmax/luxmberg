@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import './assets/css/product_animation.css';
 import { AiOutlineSearch } from 'react-icons/ai'
 import marker_pen from './assets/marker.png'
 import { Tween } from 'react-gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
+import PrdImageOne from './assets/17.png'
+import PrdImageTwo from './assets/19.png'
+import PrdImageThree from './assets/21.png'
 // import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
 import Image from './assets/homeBanner.jpg'
@@ -41,14 +44,11 @@ import Image26 from './assets/Lineart.png'
 import Image27 from './assets/pennib.png'
 import { Link } from 'react-router-dom';
 
-gsap.registerPlugin(ScrollTrigger);
-
-
-
-
 function App() {
-
-
+    
+    
+    gsap.registerPlugin(ScrollTrigger);
+    
     useEffect(() => {
 
          document.getElementsByClassName(
@@ -110,10 +110,82 @@ function App() {
            })
 
 
-
+ 
+              productBackGround()
               newLaumch()
       
     } ,[])
+
+   
+
+    function productBackGround() {
+        
+        let prd_bc = document.querySelectorAll(".product-box");
+        let tl  =  gsap.timeline({
+            paused: true,
+            scrollTrigger: {
+                trigger: prd_bc,
+                toggleActions:"restart pause resume reset", 
+                onToggle: self => console.log("toggled, isActive:", self.isActive),
+                start: "top 70%",
+                end: "bottom 50%",
+              },
+    
+        })
+            tl.to(prd_bc, {
+            duration: 1,
+            opacity: 1,
+            ease: 'expo.inOut',
+            })
+            
+            tl.from(prd_bc, {
+                duration: 1,
+                opacity: 0,
+                stagger: 0.1,
+                ease: 'expo.inOut',
+              }, "-=0.5");
+              tl.reverse();
+             
+// tl.from(links, {
+//   duration: 1,
+//   opacity: 0,
+//   y: 20,
+//   stagger: 0.1,
+//   ease: 'expo.inOut',
+// }, "-=0.5");
+
+// tl.reverse();
+
+// ham.addEventListener('click', () => {
+//   tl.reversed(!tl.reversed());
+// });
+
+
+        // gsap.to(prd_bc , 
+        //      {
+        //                 x:-220 ,
+        //             duration:2,
+        //             width:0,
+        //             opacity:5,
+        //      } ,
+              
+        //       {
+        //         x:200,
+
+        //      opacity: 1,
+        //     duration:2,
+        //     scrollTrigger: {
+        //         trigger: prd_bc,
+        //         toggleActions:"restart pause resume reset", 
+        //         onToggle: self => console.log("toggled, isActive:", self.isActive),
+        //         start: "top 70%",
+        //         end: "top 30%",
+        //         markers:true
+        //       },
+    
+        //    })
+
+     }
 
 
     function newLaumch(){
@@ -232,11 +304,48 @@ function App() {
                             dirat1ion:2
                         } )
  
-
-
-
 }
  
+
+        function visibleProduct(cl_name,prd_image , current_div_class ){
+            let prd_img_hover = document.querySelectorAll( cl_name);
+
+            gsap.to( prd_image   , {
+                zIndex: 20,
+                opacity:1,
+                scale:1 , 
+                diration:2,
+                display: "flex",
+                top:"100%" 
+            } )
+
+            gsap.to( `${prd_image} img`   , {
+                    scale:1 , 
+                    scale: 1,
+                    height: "90px",
+                    width: "100%",
+            } )
+
+
+       }
+
+       function HiddenVisibleProduct(cl_name , prd_image, current_div_class  ){
+
+        let prd_img_hover = document.querySelectorAll( cl_name);
+         
+        gsap.to( prd_image   , {
+            scale:1 , 
+            diration:2,
+            opacity:0,
+            top:"50%" ,
+            display: "none",
+        } )
+
+   }
+
+
+ 
+
     return (
         <>
             <header >
@@ -377,8 +486,9 @@ function App() {
 
                     </div>
 
+ 
                     <div className='posterBlock2'
-                  onMouseEnter={(e)=>  drawPen(".posterBlock2" , ".posterBlock2 img" , '.marker_line2' , "green")}
+                                onMouseEnter={(e)=>  drawPen(".posterBlock2" , ".posterBlock2 img" , '.marker_line2' , "green")}
                                  onMouseLeave={() =>removeDrawPen(".posterBlock2" , ".posterBlock2 img" ,'.marker_line2' , "white" ) }
                     >
                         <img src="	https://luxorpen.com/images/hl/textliter-hl/text-li-green-m.jpg" />
@@ -422,26 +532,58 @@ function App() {
                         </div>
                     </div>
                     <div class="product-container">
-                        <div class="product-box">
+
+                      <div className='prd-1'>
+
+                      <div class="product-box"    onMouseEnter={()=> visibleProduct(".my_image1" ,".prd_img_hover1" , 'prd-1') }
+                                 onMouseLeave={()=> HiddenVisibleProduct(".my_image1" ,".prd_img_hover1" ,"prd-1")} >
                             <h3>SCHOOL</h3>
                             <div className='product-img'>
-                                 <img src={Image1} alt='' />
-                                  Image hover
-                            </div>
-
+                                 <img src={Image1}  className="my_image1"      />
+                                           <div className='prd_img_hover1' > 
+                                                <img src={PrdImageOne} className='prd_image_one' />
+                                             </div>
+                             </div>
                         </div>
-                        <div class="product-box">
+
+                         
+                      </div>
+                     
+
+                      <div className='prd-2'>
+
+                      <div class="product-box"    onMouseEnter={()=> visibleProduct(".my_image2" ,".prd_img_hover2" , 'prd-2') }
+                                 onMouseLeave={()=> HiddenVisibleProduct(".my_image2" ,".prd_img_hover2" ,"prd-2")} >
                             <h3>ART</h3>
                             <div className='product-img'>
-                                <img src={Image2} alt='' />
-                            </div>
+                            <img src={Image2} alt='my_image2' />
+                                           <div className='prd_img_hover2' > 
+                                                <img src={PrdImageTwo} className='prd_image_two' />
+                                             </div>
+                             </div>
                         </div>
-                        <div class="product-box">
-                            <h3>OFFICE</h3>
-                            <div className='product-img'>
-                                <img src={Image3} alt='' />
-                            </div>
-                        </div>
+
+                         
+                      </div>
+
+
+                      
+                      <div className='prd-3'>
+
+                            <div class="product-box"    onMouseEnter={()=> visibleProduct(".my_image3" ,".prd_img_hover3" , 'prd-3') }
+                                        onMouseLeave={()=> HiddenVisibleProduct(".my_image3" ,".prd_img_hover3" ,"prd-3")} >
+                                  <h3>OFFICE</h3>
+                                    <div className='product-img'> 
+                                     <img src={Image3} alt='my_image3' />
+                                                <div className='prd_img_hover3' > 
+                                                        <img src={PrdImageThree} className='prd_image_three' />
+                                                    </div>
+                                    </div>
+                                </div>
+                      </div>
+                     
+
+                    
 
                     </div>
                     <div className='product-btn'>
