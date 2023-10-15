@@ -1215,7 +1215,10 @@ input {
 }
 
 .pen-container img {
-  transform: rotate(270deg); 
+  transform: rotate(320deg); 
+  scale: 5;
+  height: 235px;
+  width: 234px;
 
 }
 

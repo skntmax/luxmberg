@@ -68,13 +68,11 @@ function App() {
             yoyo:true,
         scrollTrigger: {
             trigger: sections,
-            markers: true,
             toggleActions:"restart pause resume reset", 
 
             onToggle: self => console.log("toggled, isActive:", self.isActive),
             start: "top 70%",
             end: "bottom 50%",
-            markers: true,
               },    
           });
 
@@ -86,13 +84,11 @@ function App() {
             opacity: 0,
             scrollTrigger: {
                 trigger: text_div,
-                markers: true,
                 toggleActions:"restart pause resume reset", 
 
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
-                markers: true,
               },
           });
     
@@ -104,13 +100,11 @@ function App() {
             yoyo:true,
             scrollTrigger: {
                 trigger: text_div,
-                markers: true,
                 toggleActions:"restart pause resume reset", 
 
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
-                markers: true,
               },
     
            })
@@ -135,12 +129,10 @@ function App() {
                 x:400,
             scrollTrigger: {
                 trigger: marker_marks,
-                markers: true,
                 toggleActions:"restart pause resume reset", 
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 20%",
-                markers: true,
                   },    
               });
 
@@ -150,7 +142,7 @@ function App() {
                     opacity:5,
               } ,
 
-              
+
                 {  
                    duration:2,
                    width:400,
@@ -160,21 +152,17 @@ function App() {
                     height: "fit-content",
                     backgroundColor: "rgba(99, 97, 7, 0.8)",
                     zIndex:-2,
-                 scrollTrigger: {
+                   scrollTrigger: {
                    trigger: pen_marker_line,
-                   markers: true,
                   toggleActions:"restart pause resume restart", 
 
                    onToggle: self => console.log("toggled, isActive:", self.isActive),
                    start: "top 70%",
                    end: "bottom 50%",
-                   markers: true,
                      },    
                  });
     
-              
-
-
+            
 
     }
     
@@ -334,7 +322,6 @@ function App() {
             <section className='launch'>
                 <div class="heading">
                     
-                        
 
                         <div style={{
                             display:'flex',
@@ -438,7 +425,8 @@ function App() {
                         <div class="product-box">
                             <h3>SCHOOL</h3>
                             <div className='product-img'>
-                                <img src={Image1} alt='' />
+                                 <img src={Image1} alt='' />
+                                  Image hover
                             </div>
 
                         </div>
