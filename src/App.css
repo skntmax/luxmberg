@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-@font-face {
-  font-family: Poppins-Black;
-  src: url("./assets/Fonts/poppins/Poppins-Black.ttf") format("opentype") , url("./assets/Fonts/MTCORSVA.TTF")  format("truetype") ;
-}
-
 
 * {
   margin: 0;
@@ -323,7 +318,7 @@ input {
   /* color: white; */
   display: flex;
   flex-direction: column;
-  /* margin-top: 2rem; */
+  margin-top: 2rem;
 }
 
 .title {
@@ -1008,17 +1003,406 @@ input {
 /* ---------------------------------------------------------end----------------------------------------------------------- */
 
 
+.productItem {
+  /* margin-top: 180px; */
+  width: 100vw;
+
+}
+
+.productItem-img {
+  /* margin-top: 300px; */
+  width: 100vw;
+}
 
 
-.marker_line{
-  /* width: 10px; */
-  border-top: 2px solid white;
+
+
+
+/* ------------------------------------------------product section------------------------------- */
+
+.productItem {
+  padding-top:17% ;
+  width: 100vw;
+}
+
+.productItem img {
+  width: 100vw;
+}
+
+
+
+/* -----------------------------------broadline marker--------------------------------------- */
+
+
+
+.main-broad-container {
+  padding-top: 20px;
+  height: 100%;
+  width: 100%;
+  /* display: flex; */
+}
+
+.pen-container {
+  width: 100%;
+  padding: 10px;
+  /* height: 20vh; */
+
+}
+
+.pen-container img {
+  width: 100%;
+  height: 100%;
+  /* transform: rotate(90deg); */
+}
+
+.marker-container {
+  width: 75vw;
+  height: 100%;
+}
+
+/* ---------------------------------------container 1st---------- */
+
+
+/* ----------------part 1----- */
+
+.broad-section {
+  margin-bottom: 20px;
+}
+
+.broad-section h2 {
+  padding-bottom: 20px;
+}
+
+
+.broad-section p {
+  font-size: 20px;
+}
+
+/* ----------------part 2----- */
+
+.color-cont {
+  margin-top: 20px;
+}
+
+.color-heading {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.color-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.para-shade {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+/* ----------------part 3----- */
+
+.round-img-cont {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.toxic-img img{
+  height: 100%;
+  width: 100%;
+}
+
+.washable-img img{
+  height: 100%;
+  width: 100%;
+}
+
+/* ----------------part 5----- */
+
+.broadline-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.broadline-card {
+  height: 400px;
+  width: 400px;
   border-radius: 10px;
 }
 
-.new_launch{
-   position: relative;
+.broadline-card img {
+  height: 100%;
+  width: 100%;
+  /* border-radius: 10px; */
 }
-.marker_marks{
-   position: absolute;
+
+/* ----------------part 5-----  */
+
+.dyn-cont {
+  display: flex;
+  align-items: center;
+  margin: 50px 0 50px 0;
 }
+
+.dyn-img {
+  width: 20%;
+}
+
+.dyn-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* --------------------------------------------------------------- */
+
+
+/* ------------------------------------------------product section------------------------------- */
+
+
+
+/* -----------------------------------broadline marker--------------------------------------- */
+
+
+
+.main-broad-container {
+  padding-top: 20px;
+  height: 100%;
+  width: 100%;
+  /* display: flex; */
+}
+
+.pen-container {
+  width: 100%;
+  padding: 10px;
+  /* height: 20vh; */
+
+}
+
+.pen-container img {
+  width: 100%;
+  height: 100%;
+  /* transform: rotate(90deg); */
+}
+
+.marker-container {
+  width: 75vw;
+  height: 100%;
+  margin-right: 5%;
+}
+
+/* ---------------------------------------container 1st---------- */
+
+.main-broad-container {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.pen-container {
+  height: 100%;
+  width: 20%;
+}
+
+.marker-container {
+  height: 100%;
+  width: 80%;
+}
+
+.pen-container img {
+  /* transform: rotate(90deg); */
+}
+
+
+
+/* ----------------part 1----- */
+
+.broad-section {
+  margin-bottom: 40px;
+  /* background-color: red; */
+}
+
+.broad-section h2 {
+  padding-bottom: 10px;
+  font-size: 4vw;
+  /* background-color: red; */
+}
+
+
+.broad-section p {
+  font-size: 20px;
+}
+
+/* ----------------part 2----- */
+
+.color-cont {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.color-heading {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.color-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.color-shade {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-shade1 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: black;
+  /* border: 1px solid black; */
+  /* padding: 5px; */
+}
+
+.color-shade2 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.color-shade3 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: rgb(203, 122, 7);
+}
+
+.color-shade4 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: rgb(21, 100, 5);
+}
+
+.color-shade5 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: rgb(62, 202, 95);
+}
+
+.color-shade6 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: rgb(24, 20, 102);
+}
+
+.para-shade p {
+  border: 1px solid rgb(17, 6, 0);
+  padding: 5px;
+  margin-bottom: 0;
+}
+
+/* ----------------part 3----- */
+
+.round-img-cont {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toxic-img {
+  height: 300px;
+  width: 300px ;
+  /* background-color: #ed1b24; */
+  border-radius: 50%;
+  padding: 10px;
+  border: 12px solid grey;
+}
+
+.toxic-img img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  /* padding: 10px; */
+}
+
+.washable-img img{
+  height: 100%;
+  width: 100%;
+}
+
+/* ----------------part 4----- */
+
+.broadline-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.broadline-card {
+  height: 300px;
+  width: 350px;
+  border: 2px solid black;
+  /* background-color: #9cd3ee; */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.broadline-card img {
+  height: 80%;
+  width: 100%;
+  /* border-radius: 10px; */
+}
+
+/* ---------------------------part5--------------------------- */
+
+.dyn-img {
+  height: 250px;
+  width: 250px;
+}
+
+.dyn-img {
+  height: 100%;
+  width: 100%;
+}
+
+.dyn-para {
+  font-size: 20px;
+}
+
+/* ----------------------------------------------------------------------- */
+
+.products {
+
+}
+
+.product-img {
+ position: relative;
+}
+
+.bakground-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.bakground-image img {
+  height: 50vw;
+  width: 100vh;
+}
+
+
+
