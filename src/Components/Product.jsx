@@ -3,7 +3,7 @@ import './../App.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 
 import productimg1 from './../assets/product1.png'
-import marker from './../assets/marker.png'
+import marker from './../assets/marker_heighlighter-removebg-preview.png'
 import popular1 from './../assets/popular1.png'
 import popular2 from './../assets/popular2.png'
 // import Marker1 from './../assets/1'
@@ -29,9 +29,11 @@ const ProductPage = () => {
 
 
                 <header >
-                    <a href='#' className='logo'>
-                        <img src='https://luxorpen.com/images/logo/logo.png' />
-                    </a>
+                 
+                    <Link to='/' className='logo'>
+                         <img src='https://luxorpen.com/images/logo/logo.png' />
+                    </Link>
+                     
                     <div className='search'>
                         <input className='inputData' placeholder='Search' />
                         <AiOutlineSearch className='searchIcon' />
@@ -41,8 +43,8 @@ const ProductPage = () => {
                             <option value="Hin">Hindi</option>
                         </select>
                     </div>
-
-                </header>
+                         </header>
+                 
                 <nav>
 
                     <ul className='navbar'>
@@ -80,7 +82,9 @@ const ProductPage = () => {
                 {/* ---------------------------------------container 1st---------- */}
 
                 <div className='pen-container'>
-                    <img src={marker} alt='' />
+                    <img src={marker} alt='' style={{
+                  
+                   }} />
                 </div>
                 {/* -------------------------container 2nd------------------------ */}
                 <div className='marker-container'>
