@@ -61,22 +61,6 @@ function App() {
 
 
         gsap.to(sections,
-<<<<<<< HEAD
-            {
-                duration: 2,
-                x: -150,
-                repeat: -1,
-                yoyo: true,
-                scrollTrigger: {
-                    trigger: sections,
-                    markers: true,
-                    onToggle: self => console.log("toggled, isActive:", self.isActive),
-                    start: "top 70%",
-                    end: "bottom 50%",
-                    markers: true,
-                },
-            });
-=======
         {  
             duration:2,
             x:-150,
@@ -91,7 +75,6 @@ function App() {
             end: "bottom 50%",
               },    
           });
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
 
 
         gsap.from(text_div, {
@@ -106,18 +89,10 @@ function App() {
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
-<<<<<<< HEAD
-                markers: true,
-            },
-        });
-
-        gsap.to(text_div, {
-=======
               },
           });
     
           gsap.to(text_div , {
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
             x: 70,
             opacity: 1,
             duration: 2,
@@ -130,18 +105,6 @@ function App() {
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
-<<<<<<< HEAD
-                markers: true,
-            },
-
-        })
-
-
-
-        newLaumch()
-
-    }, [])
-=======
               },
     
            })
@@ -152,7 +115,6 @@ function App() {
               newLaumch()
       
     } ,[])
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
 
    
 
@@ -229,42 +191,6 @@ function App() {
     function newLaumch() {
 
         let new_launch = document.querySelectorAll(".new_launch");
-<<<<<<< HEAD
-        let marker_marks = document.querySelectorAll(".marker_marks");
-
-        // gsap.to(new_launch,
-        //      {  
-        //         duration:2,
-        //         x:100,
-        //     scrollTrigger: {
-        //         trigger: marker_marks,
-        //         markers: true,
-        //         onToggle: self => console.log("toggled, isActive:", self.isActive),
-        //         start: "top 70%",
-        //         end: "bottom 50%",
-        //         markers: true,
-        //           },    
-        //       });
-
-        //       gsap.to(new_launch,
-        //         {  
-        //            duration:2,
-        //            x:100,
-        //            backgroundColor:"yellow",
-        //          scrollTrigger: {
-        //            trigger: new_launch,
-        //            markers: true,
-        //            onToggle: self => console.log("toggled, isActive:", self.isActive),
-        //            start: "top 70%",
-        //            end: "bottom 50%",
-        //            markers: true,
-        //              },    
-        //          });
-
-
-
-
-=======
         let pen_marker_line = document.querySelectorAll(".pen_marker_line");
         
         let marker_marks = document.querySelectorAll(".new_launch_marker img");
@@ -309,7 +235,6 @@ function App() {
                  });
     
             
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
 
     }
 
@@ -337,54 +262,6 @@ function App() {
 
         gsap.to(marker_line, {
             //  backgroundColor:"red",
-<<<<<<< HEAD
-            borderTop: `8px solid ${pen_colour}`,
-            width: 100,
-            scale: 1,
-            dirat1ion: 2
-        })
-
-
-
-    }
-
-
-    function removeDrawPen(pen_div, pen_image_div, pen_draw_div, pen_colour) {
-        let penDiv = document.querySelectorAll(pen_div);
-        let Image = document.querySelectorAll(pen_image_div)
-        let marker_line = document.querySelectorAll(pen_draw_div)
-
-        gsap.to(penDiv, {
-            backgroundColor: "white",
-            scale: 1,
-            diration: 0,
-            width: 245,
-        })
-
-        gsap.to(Image, {
-            //  backgroundColor:"red",
-            x: 0,
-            width: 245,
-            height: "86%",
-            scale: 1,
-            dirat1ion: 2,
-            yoyo: true
-        })
-
-        gsap.to(marker_line, {
-            //  backgroundColor:"red",
-            borderTop: `8px solid ${pen_colour}`,
-            x: 0,
-            width: 0,
-            scale: 1,
-            dirat1ion: 2
-        })
-
-
-
-
-    }
-=======
            borderTop: `8px solid ${pen_colour}`,
             width:100,
             scale:1 , 
@@ -468,7 +345,6 @@ function App() {
 
 
  
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
 
     return (
         <>
@@ -560,22 +436,6 @@ function App() {
 
             <section className='launch'>
                 <div class="heading">
-<<<<<<< HEAD
-
-
-                    <h2 className='new_launch'>
-                        {/*                             
-                            <span  style={{
-                                    width: "100px",
-                                height: "20px",
-                                background: "yellow",
-                            }} >  
-                            <img src={marker_pen} width={200}  className='marker_marks'/>
-                            
-                             </span> */}
-                        New Launches
-                    </h2>
-=======
                     
 
                         <div style={{
@@ -614,7 +474,6 @@ function App() {
                              
                         </div>
                       
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
 
                 </div>
                 <div className='carouselItem'>
@@ -635,13 +494,8 @@ function App() {
 
  
                     <div className='posterBlock2'
-<<<<<<< HEAD
-                        onMouseEnter={(e) => drawPen(".posterBlock2", ".posterBlock2 img", '.marker_line2', "green")}
-                        onMouseLeave={() => removeDrawPen(".posterBlock2", ".posterBlock2 img", '.marker_line2', "white")}
-=======
                                 onMouseEnter={(e)=>  drawPen(".posterBlock2" , ".posterBlock2 img" , '.marker_line2' , "green")}
                                  onMouseLeave={() =>removeDrawPen(".posterBlock2" , ".posterBlock2 img" ,'.marker_line2' , "white" ) }
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
                     >
                         <img src="	https://luxorpen.com/images/hl/textliter-hl/text-li-green-m.jpg" />
                         <div className='textBlock'>
