@@ -51,33 +51,33 @@ function App() {
 
     useEffect(() => {
 
-         document.getElementsByClassName(
+        document.getElementsByClassName(
             'Art_gallery_button'
         )[0].innerHTML = "Art Gallery"
 
         let text_div = document.querySelectorAll(".home-text");
         let sections = document.querySelectorAll(".home1-img img");
         let new_launch = document.querySelectorAll("new_launch");
-        
+
 
         gsap.to(sections,
-        {  
-            duration:2,
-            x:-150,
-            repeat:-1,
-            yoyo:true,
-        scrollTrigger: {
-            trigger: sections,
-            markers: true,
-            onToggle: self => console.log("toggled, isActive:", self.isActive),
-            start: "top 70%",
-            end: "bottom 50%",
-            markers: true,
-              },    
-          });
+            {
+                duration: 2,
+                x: -150,
+                repeat: -1,
+                yoyo: true,
+                scrollTrigger: {
+                    trigger: sections,
+                    markers: true,
+                    onToggle: self => console.log("toggled, isActive:", self.isActive),
+                    start: "top 70%",
+                    end: "bottom 50%",
+                    markers: true,
+                },
+            });
 
 
-           gsap.from(text_div, {
+        gsap.from(text_div, {
             x: -220,
             stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
             duration: 2,
@@ -89,15 +89,15 @@ function App() {
                 start: "top 70%",
                 end: "bottom 50%",
                 markers: true,
-              },
-          });
-    
-          gsap.to(text_div , {
+            },
+        });
+
+        gsap.to(text_div, {
             x: 70,
             opacity: 1,
-            duration:2,
-            repeat:-1,
-            yoyo:true,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
             scrollTrigger: {
                 trigger: text_div,
                 markers: true,
@@ -105,22 +105,22 @@ function App() {
                 start: "top 70%",
                 end: "bottom 50%",
                 markers: true,
-              },
-    
-           })
+            },
+
+        })
 
 
 
-              newLaumch()
-      
-    } ,[])
+        newLaumch()
+
+    }, [])
 
 
-    function newLaumch(){
-         
+    function newLaumch() {
+
         let new_launch = document.querySelectorAll(".new_launch");
         let marker_marks = document.querySelectorAll(".marker_marks");
-        
+
         // gsap.to(new_launch,
         //      {  
         //         duration:2,
@@ -149,89 +149,89 @@ function App() {
         //            markers: true,
         //              },    
         //          });
-    
-              
+
+
 
 
 
     }
-    
-    function drawPen(pen_div , pen_image_div , pen_draw_div,  pen_colour) {
 
-        let penDiv = document.querySelectorAll(pen_div    );
+    function drawPen(pen_div, pen_image_div, pen_draw_div, pen_colour) {
+
+        let penDiv = document.querySelectorAll(pen_div);
         let Image = document.querySelectorAll(pen_image_div)
         let marker_line = document.querySelectorAll(pen_draw_div)
 
-         gsap.to( penDiv , {
+        gsap.to(penDiv, {
             //  backgroundColor:"red",
-             width:300,
-            scale:1 , 
-            dirat1ion:2
-         } )
+            width: 300,
+            scale: 1,
+            dirat1ion: 2
+        })
 
-           gsap.to( Image , {
+        gsap.to(Image, {
             //  backgroundColor:"red",
-            x:100,
-            width:300,
-            height:"86%",
-            scale:1 , 
-            dirat1ion:2
-           })
+            x: 100,
+            width: 300,
+            height: "86%",
+            scale: 1,
+            dirat1ion: 2
+        })
 
-         gsap.to( marker_line , {
+        gsap.to(marker_line, {
             //  backgroundColor:"red",
-           borderTop: `8px solid ${pen_colour}`,
-            width:100,
-            scale:1 , 
-            dirat1ion:2
-         } )
- 
-
- 
-            }
-
-
-             function removeDrawPen(pen_div , pen_image_div, pen_draw_div,  pen_colour) {
-                let penDiv = document.querySelectorAll(pen_div    );
-                let Image =  document.querySelectorAll(pen_image_div)
-                let marker_line = document.querySelectorAll(pen_draw_div)
-
-                    gsap.to( penDiv , {
-                        backgroundColor:"white",
-                        scale:1 , 
-                        diration:0,
-                        width:245,
-                    } )
-
-                    gsap.to( Image , {
-                        //  backgroundColor:"red",
-                        x:0,
-                        width:245,
-                        height:"86%",
-                        scale:1 , 
-                        dirat1ion:2,
-                        yoyo:true
-                     } )
-                            
-                        gsap.to( marker_line , {
-                            //  backgroundColor:"red",
-                            borderTop: `8px solid ${pen_colour}`,
-                            x:0,
-                            width:0,
-                            scale:1 , 
-                            dirat1ion:2
-                        } )
- 
+            borderTop: `8px solid ${pen_colour}`,
+            width: 100,
+            scale: 1,
+            dirat1ion: 2
+        })
 
 
 
-}
- 
+    }
+
+
+    function removeDrawPen(pen_div, pen_image_div, pen_draw_div, pen_colour) {
+        let penDiv = document.querySelectorAll(pen_div);
+        let Image = document.querySelectorAll(pen_image_div)
+        let marker_line = document.querySelectorAll(pen_draw_div)
+
+        gsap.to(penDiv, {
+            backgroundColor: "white",
+            scale: 1,
+            diration: 0,
+            width: 245,
+        })
+
+        gsap.to(Image, {
+            //  backgroundColor:"red",
+            x: 0,
+            width: 245,
+            height: "86%",
+            scale: 1,
+            dirat1ion: 2,
+            yoyo: true
+        })
+
+        gsap.to(marker_line, {
+            //  backgroundColor:"red",
+            borderTop: `8px solid ${pen_colour}`,
+            x: 0,
+            width: 0,
+            scale: 1,
+            dirat1ion: 2
+        })
+
+
+
+
+    }
+
     return (
         <>
-            <header >
+            <header className='header'>
 
-               
+
 
                 <a href='#' className='logo'>
                     <img src='https://luxorpen.com/images/logo/logo.png' />
@@ -249,9 +249,9 @@ function App() {
             </header>
 
 
-            <nav>
+            <nav className='navbar'>
 
-                <ul className='navbar'>
+                <ul>
 
                     <li>
                         <a href="#about">
@@ -295,26 +295,32 @@ function App() {
 
                 </div>
                 <div className="home-text">
+                    <div>
                     <h1>Luxor All</h1>
                     <h1>Around The World</h1>
+                    </div>
                     {/* <h2>Frontend Developer</h2> */}
-                    <p>Luxor is a pioneer and a brand leader in the writing instrument industry
-                        with a significant presence in the international market. Luxor is exporting
-                        products to more than 106 countries across the globe including USA,
-                        Australia, Russia, UK, Europe, UAE and many other markets. Our range of
-                        products include - Kids Markers, Highlighters, Eco-friendly Stationeries,
-                        O‹ce & Personal Stationeries.</p>
-                    <a href="#" className="btn-bg">Explore</a>
+
+                    <div>
+                        <p>Luxor is a pioneer and a brand leader in the writing instrument industry
+                            with a significant presence in the international market. Luxor is exporting
+                            products to more than 106 countries across the globe including USA,
+                            Australia, Russia, UK, Europe, UAE and many other markets. Our range of
+                            products include - Kids Markers, Highlighters, Eco-friendly Stationeries,
+                            O‹ce & Personal Stationeries.</p>
+                    </div>
+
+                    <div><a href="#" className="btn-bg">Explore</a></div>
                 </div>
 
             </section>
 
             <section className='launch'>
                 <div class="heading">
-                    
-                        
-                        <h2 className='new_launch'>
-{/*                             
+
+
+                    <h2 className='new_launch'>
+                        {/*                             
                             <span  style={{
                                     width: "100px",
                                 height: "20px",
@@ -323,18 +329,18 @@ function App() {
                             <img src={marker_pen} width={200}  className='marker_marks'/>
                             
                              </span> */}
-                         New Launches
-                        </h2>
+                        New Launches
+                    </h2>
 
                 </div>
                 <div className='carouselItem'>
-                    <div className='posterBlock1' 
-                           onMouseEnter={(e)=>  drawPen(".posterBlock1" , ".posterBlock1 img" ,  '.marker_line1' , "red")}
-                                 onMouseLeave={() =>removeDrawPen(".posterBlock1" , ".posterBlock1 img" , '.marker_line1' , "white" ) }
+                    <div className='posterBlock1'
+                        onMouseEnter={(e) => drawPen(".posterBlock1", ".posterBlock1 img", '.marker_line1', "red")}
+                        onMouseLeave={() => removeDrawPen(".posterBlock1", ".posterBlock1 img", '.marker_line1', "white")}
                     >
                         <img src="https://luxorpen.com/images/bp/xonox-bp/black-m.jpg" />
                         <div className='textBlock'>
-                        <div className='marker_line1'> </div>
+                            <div className='marker_line1'> </div>
                             <span className='title'>
                                 Ball / Gell Pens
 
@@ -344,34 +350,34 @@ function App() {
                     </div>
 
                     <div className='posterBlock2'
-                  onMouseEnter={(e)=>  drawPen(".posterBlock2" , ".posterBlock2 img" , '.marker_line2' , "green")}
-                                 onMouseLeave={() =>removeDrawPen(".posterBlock2" , ".posterBlock2 img" ,'.marker_line2' , "white" ) }
+                        onMouseEnter={(e) => drawPen(".posterBlock2", ".posterBlock2 img", '.marker_line2', "green")}
+                        onMouseLeave={() => removeDrawPen(".posterBlock2", ".posterBlock2 img", '.marker_line2', "white")}
                     >
                         <img src="	https://luxorpen.com/images/hl/textliter-hl/text-li-green-m.jpg" />
                         <div className='textBlock'>
-                        <div className='marker_line2'> </div>
+                            <div className='marker_line2'> </div>
                             <span className='title'>
                                 Highliter
                             </span></div>
                     </div>
                     <div className='posterBlock3'
-                     onMouseEnter={(e)=>  drawPen(".posterBlock3" , ".posterBlock3 img" , '.marker_line3' , "blue")}
-                                 onMouseLeave={() =>removeDrawPen(".posterBlock3" , ".posterBlock3 img" ,'.marker_line3' , "white" ) }
-                             >
+                        onMouseEnter={(e) => drawPen(".posterBlock3", ".posterBlock3 img", '.marker_line3', "blue")}
+                        onMouseLeave={() => removeDrawPen(".posterBlock3", ".posterBlock3 img", '.marker_line3', "white")}
+                    >
                         <img src="https://luxorpen.com/images/wb/wb-450/wb450-blue.jpg" />
                         <div className='textBlock'>
-                        <div className='marker_line3'> </div>
+                            <div className='marker_line3'> </div>
                             <span className='title'>
                                 White Board Markers
                             </span></div>
                     </div>
                     <div className='posterBlock4'
-            onMouseEnter={(e)=>  drawPen(".posterBlock4" , ".posterBlock4 img" , '.marker_line4' ,  "black")}
-                                 onMouseLeave={() =>removeDrawPen(".posterBlock4" , ".posterBlock4 img" ,'.marker_line4' , "white" ) }
+                        onMouseEnter={(e) => drawPen(".posterBlock4", ".posterBlock4 img", '.marker_line4', "black")}
+                        onMouseLeave={() => removeDrawPen(".posterBlock4", ".posterBlock4 img", '.marker_line4', "white")}
                     >
                         <img src="	https://luxorpen.com/images/pm/pm-1222/pm1222-blue.jpg" />
                         <div className='textBlock'>
-                        <div className='marker_line4'> </div>
+                            <div className='marker_line4'> </div>
                             <span className='title'>
                                 Permanent Markers
                             </span></div>
@@ -448,14 +454,15 @@ function App() {
                     <h2 style={{
                         lineHeight: "80%",
                         color: "green",
-                        fontSize: "70px"
+                        fontSize: "5vw",
+                        paddingTop: "5%"
                     }}>Let's save the <br /> environment with Luxor</h2>
                 </div>
                 <div className='home-container'>
                     <div className="homeImg-luxor ">
                         <p style={{
-                            padding: "70px",
-                            fontSize: "25px",
+                            padding: "5%",
+                            fontSize: "1.5vw",
                             color: "rgba(61, 57, 59, 0.69)"
                         }}>
 
@@ -498,8 +505,8 @@ function App() {
                     <h2 style={{
                         lineHeight: "80%",
                         color: "red",
-                        fontSize: "70px",
-                        margin: "50px 0px"
+                        fontSize: "5vw",
+                        margin: "5% 0px"
 
                     }}>Look Book  </h2>
                 </div>
@@ -513,9 +520,9 @@ function App() {
                             color: "rgba(61, 57, 59, 0.69)"
                         }}>
 
-                            <div style={{
-                                display: "flex",
-                                gap: "150px",
+                            <div className="look-img-cont" style={{
+                                // display: "flex",
+                                // gap: "5%",
                             }}>
                                 <ImageContainer src={I1} t1="up your presentation " t2="Game" />
                                 <ImageContainer src={I2} t1="Spark your creativity with" t2="Luxor pens" />

@@ -281,7 +281,19 @@ input {
   gap: 5rem;
   margin-top: 3rem;
   overflow-x: auto;
+  /* margin-top: 600px;sd */
 }
+
+
+
+carousel .slider-wrapper.axis-horizontal .slider .slide {
+  flex-direction: column;
+  /* flex-flow: column; */
+  /* margin-top: 70%; */
+}
+/* .carousel .slider-wrapper {
+  margin-top: 0%;
+} */
 
 /* .posterBlock {
   background: var(--bg-black-50);
@@ -480,14 +492,16 @@ input {
 
 .env-heading h2 {
   color: rgb(53, 148, 53);
-  font-size: 2.8rem;
+  font-size: 5vw;
   font-weight: 600;
   display: flex;
   justify-content: center;
+  padding-top: 7%;
 }
 
 .env-para {
   margin: 20px 10% 25px 10%;
+  font-size: 8vw;
 }
 
 /* --------------------------------------- */
@@ -570,7 +584,7 @@ input {
 
 .ugc-img-cont {
   width: 50vw;
-  height: 70vh;
+  height: 100%;
   /* margin-top: 20px; */
   /* margin-bottom: 20px; */
 }
@@ -583,8 +597,9 @@ input {
 
 .ugc-img-cont2 {
   width: 30vw;
-  height: 53vh;
-  margin-top: 83px;
+  height: 90%vh;
+  padding: 8% 0 8% 0;
+
   /* margin-bottom: 20px; */
 }
 
@@ -598,11 +613,12 @@ input {
 
 .organisation-container {
   margin-top: 20px;
+  height: 80%;
 }
 
 .org-heading h2 {
   color: #ed1b24;
-  font-size: 2.8rem;
+  font-size: 5vw;
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -615,11 +631,11 @@ input {
 
 .org-btn-cont {
   display: flex;
-  gap: 10px;
+  gap: 40%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 40%;
+  /* gap: 40%; */
   /* padding-right: 40px; */
   /* transform: rotate(-90deg); */
 }
@@ -664,7 +680,7 @@ input {
 
 .org-img-card {
   width: 30vw;
-  height: 50vh;
+  height: 100%;
   margin-top: 20px;
   /* margin-bottom: 20px; */
 }
@@ -683,13 +699,13 @@ input {
   overflow-x: hidden;
   margin-top: 40px;
   padding-top: 40px;
-  height: 70vh;
+  height: 100%;
   background-color: #ed1b24;
 }
 
 .luxor-heading h2 {
   color: #fff;
-  font-size: 3.8rem;
+  font-size: 4.5vw;
   font-weight: 500;
   display: flex;
   justify-content: center;
@@ -711,10 +727,10 @@ input {
 }
 
 .client-img {
-  height: 50%;
-  width: 50%;
+  height: 20vw;
+  /* width: 30%; */
   border-radius: 50%;
-  padding: 0 25px 0 25px;
+  padding: 0 5% 0 5%;
   background-color: rgb(180, 20, 20);
   display: flex;
   align-items: center;
@@ -725,7 +741,7 @@ input {
   background-color: #fff;
   height: 100%;
   width: 100%;
-  padding: 20px;
+  padding: 8%;
   border-radius: 50%
 }
 
@@ -752,7 +768,8 @@ input {
   /* display: flex; */
   align-items: center;
   padding-right: 10%;
-  /* justify-content: center; */
+  justify-content: center;
+  /* padding-left: 25%; */
 }
 
 .luxor-review h3 {
@@ -776,7 +793,7 @@ input {
 /* ------------------------------------ */
 
 .dyk-container {
-  height: 50vh;
+  height: 50%;
   margin-top: 20px;
   background-color: #ed1b24;
   display: flex;
@@ -817,14 +834,14 @@ input {
 
 .footer-heading1 h2 {
   color: #ed1b24;
-  font-size: 2.8rem;
+  font-size: 4vw;
   font-weight: 600;
   display: flex;
   justify-content: center;
 }
 
 .partner-cont {
-  height: 70vh;
+  height: 100%;
   width: 100%;
   padding: 0 10% 0 10%;
   margin-top: 2%;
@@ -848,7 +865,7 @@ input {
   font-weight: 500;
   background-color: #fff;
   border: 1px solid black;
-  width: 13.8vw;
+  width: 18.8vw;
   font-size: 2vw;
   cursor: pointer;
 }
@@ -858,7 +875,7 @@ input {
   padding: 0.3vw 1.2vw 0.3vw 1.2vw;
   font-weight: 500;
   background-color: #ed1b24;
-  width: 13.8vw;
+  width: 15.8vw;
   font-size: 2vw;
   cursor: pointer;
   border: none;
@@ -887,11 +904,11 @@ input {
 
 .certi-heading h2 {
   color: #ed1b24;
-  font-size: 2.8rem;
+  font-size: 4.5vw;
   font-weight: 600;
   display: flex;
   justify-content: center;
-  margin-top: 3%;
+  margin-top: 7%;
 }
 
 .certi-img-cont {
@@ -915,11 +932,11 @@ input {
 
 .award-heading h2 {
   color: #ed1b24;
-  font-size: 2.8rem;
+  font-size: 4.5vw;
   font-weight: 600;
   display: flex;
   justify-content: center;
-  margin-top: 3%;
+  margin-top: 7%;
 }
 
 .award-img-cont {
@@ -934,27 +951,30 @@ input {
 
 .award-img {
   /* width: 100%; */
-  height: 50%;
+  height: 20%;
+  width: 15%;
+  /* width: 20vw; */
 }
 
 .award-img img {
-  width: 80%;
+  width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
 .pen-pointer {
+  width: 10%;
   height: 10%;
-  width: 9%;
   padding: 10px;
-  position: relative;
-  bottom: 50px;
+  /* position: relative; */
+  bottom: 10%;
   /* bottom: 350px; */
-  left: -90px;
+  left: 10vw;
   margin-left: 0;
 }
 
 .pen-pointer img {
-  height: 100%;
+  height: 80%;
   width: 100%;
 }
 
@@ -962,16 +982,17 @@ input {
 
 .footer-copyright {
   background-color: #ed1b24;
-  height: 4vw;
+  height: 50px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 10px;
 }
 
 .copyright-para p {
   color: #fff;
-  font-size: larger;
+  font-size: 2vw;
   font-weight: 300;
   align-items: center;
 }
@@ -979,20 +1000,21 @@ input {
 .footer-icon {}
 
 
+
+
 .Art_gallery_button {
   position: absolute;
-  border-radius: 60px;
+  border-radius: 10vw;
   color: red;
   background-color: red;
   text-align: center;
+  align-items: center;
   color: white;
-  width: 400px;
-  height: 100px;
+  width: 70vh;
+  height: 15vh;
   z-index: 1;
-  right: 360px;
-  top: 280px;
-  padding: -3px;
-  font-size: 65px;
+  right: 20%;
+  font-size: 400%;
   font-weight: bolder;
 }
 
@@ -1403,6 +1425,144 @@ input {
   height: 50vw;
   width: 100vh;
 }
+
+/* ---------------------------------------------------media query------------------------------- */
+/* 
+@media(min-width:768px) {
+  .home {
+    flex-direction: row-reverse;
+  }
+} */
+
+@media (max-width: 768px) {
+
+  .header {
+    height: 20%;
+    flex-direction: column;
+  }
+
+  .logo img {
+    height: 5vw;
+    margin-top: 8%;
+    /* width: 20vh; */
+    /* size: 5vw; */
+    height: 50%;
+  }
+
+  .navbar {
+    position: relative;
+    display: none;
+  }
+
+  .home-text {
+    margin-bottom: 8%;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    gap: -5%;
+  }
+
+  .footer-copyright {
+    height: 40px;
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  /* ------------------------org------------------- */
+
+  .org-btn-cont {
+    gap: 2%;
+  }
+
+  .org-btn-1 {
+    transform: rotate(0);
+  }
+
+  .org-btn-2 {
+    transform: rotate(0);
+  }
+
+  /* --------------------loxor------------------------------------- */
+
+  .client {
+    /* display: flex; */
+    flex-direction: column;
+  }
+
+  .luxor-review {
+    width: 100%;
+    padding-left: 10%;
+    padding-top: 5%;
+  }
+
+  .client-detail {
+    width: 100%;
+  }
+
+  /* ----------------------------------------------------- */
+
+  .dyk-container {
+    flex-direction: column;
+    padding-bottom: 5%;
+  }
+
+  .dyk-scroll {
+    padding-left: 0;
+  }
+
+  /* -------------------------------look book-------------------------------------- */
+
+  .look-img-cont {
+    flex-direction: column;
+  margin-left: 27%;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  }
+
+  .ImageContainer {
+    /* margin-left: 20%; */
+  }
+}
+
+
+/* ------------------------------extra code------------------------ */
+.navbar {
+  margin-top: 5%;
+  position: fixed;
+}
+
+.look-img-cont {
+  display: flex;
+  gap: 5%;
+  /* flex-direction: column; */
+}
+
+.homeImg img {
+  height: 50%;
+  width: 100%;
+}
+
+.heading h2 {
+  font-size: 5vw;
+}
+
+.product-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.btn-box{
+  width: 20%;
+  font-size: 3vw;
+  /* background-color: #ec1839; */
+
+}
+
+
 
 
 
