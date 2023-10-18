@@ -31,12 +31,12 @@ const ProductPage = () => {
             <div>
 
 
-                <header >
-                 
+                <header className='header'>
+
                     <Link to='/' className='logo'>
-                         <img src='https://luxorpen.com/images/logo/logo.png' />
+                        <img src='https://luxorpen.com/images/logo/logo.png' />
                     </Link>
-                     
+
                     <div className='search'>
                         <input className='inputData' placeholder='Search' />
                         <AiOutlineSearch className='searchIcon' />
@@ -46,8 +46,8 @@ const ProductPage = () => {
                             <option value="Hin">Hindi</option>
                         </select>
                     </div>
-                         </header>
-                 
+                </header>
+
                 <nav>
 
                     <ul className='navbar'>
@@ -86,8 +86,8 @@ const ProductPage = () => {
 
                 <div className='pen-container'>
                     <img src={marker} alt='' style={{
-                  
-                   }} />
+
+                    }} />
                 </div>
                 {/* -------------------------container 2nd------------------------ */}
                 <div className='marker-container'>
@@ -127,10 +127,10 @@ const ProductPage = () => {
                     {/* ----------------part 3----- */}
                     <div className='round-img-cont'>
                         <div className='toxic-img'>
-                            <img src={MarkerW} alt=''/>
+                            <img src={MarkerW} alt='' />
                         </div>
                         <div className='toxic-img'>
-                            <img src={MarkerT} alt=''/>
+                            <img src={MarkerT} alt='' />
                         </div>
                     </div>
                     {/* ----------------part 4----- */}
@@ -152,7 +152,7 @@ const ProductPage = () => {
                     {/* ----------------part 5-----  */}
                     <div className='dyn-cont'>
                         <div className='dyn-img'>
-                        <img src={Dyn} alt='' />
+                            <img src={Dyn} alt='' />
                         </div>
                         <div className='dyn-para'>
                             <p>The colours of the rainbow always go in the same colour:

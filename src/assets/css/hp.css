@@ -4,6 +4,10 @@
      background-color: #fff;
  }
 
+ .header {
+     padding: 1.5% 4%;
+ }
+
  .aboutus {
      font-size: 2vw;
  }
@@ -80,6 +84,14 @@
 /* -----------------------------------media query--------------------------*/
 
 @media (max-width: 768px) {
+
+     .logo img {
+          /* margin-top: 0; */
+     }
+
+     .header {
+          height: 17vw;
+     }
      .main-broad-container {
           flex-direction: column;
      }
@@ -87,9 +99,7 @@
      .pen-container {
           transform: rotate(90deg);
           height: 100px;
-          width: 100px;
-          display: ;
-     }
+          width: 100px;     }
 
      .pen-container img {
           height: 300px;
