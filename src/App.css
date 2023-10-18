@@ -145,10 +145,10 @@ nav {
 
 
 .navbar a {
-  font-size: 1.2rem;
+  font-size: 10px;
   padding: 0px 82px;
   color: var(--text-black-900);
-  font-weight: 500;
+  font-weight: 200;
   margin-top: 2rem;
 }
 
@@ -572,12 +572,15 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   width: 30vw;
   height: 50vh;
   margin-top: 20px;
+  padding: 0 10% 0 10%;
   /* margin-bottom: 20px; */
 }
 
 .look-img-cont img {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
   /* object-fit: contain; */
 }
 
@@ -1444,6 +1447,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   }
 } */
 
+ 
 @media (max-width: 768px) {
 
   .header {

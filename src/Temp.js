@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './App.css';
 import './assets/css/hp.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import marker_pen from './assets/marker.png'
 import { Tween } from 'react-gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 // import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
@@ -49,6 +51,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
 
+    let prd_pen = useRef()
+
 
     useEffect(() => {
 
@@ -59,7 +63,6 @@ function App() {
         let text_div = document.querySelectorAll(".home-text");
         let sections = document.querySelectorAll(".home1-img img");
         let new_launch = document.querySelectorAll("new_launch");
-
 
         gsap.to(sections,
         {  
@@ -85,7 +88,6 @@ function App() {
             opacity: 0,
             scrollTrigger: {
                 trigger: text_div,
-                markers: true,
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
@@ -100,7 +102,6 @@ function App() {
             yoyo: true,
             scrollTrigger: {
                 trigger: text_div,
-                markers: true,
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
@@ -109,13 +110,18 @@ function App() {
            })
 
 
+
  
+           
+          
               productBackGround()
               newLaumch()
       
     } ,[])
 
    
+      
+      
 
     function productBackGround() {
         
@@ -347,10 +353,8 @@ function App() {
 
     return (
         <>
+            
             <header className='header'>
-
-
-
                 <a href='#' className='logo'>
                     <img src='https://luxorpen.com/images/logo/logo.png' />
                 </a>
@@ -368,9 +372,7 @@ function App() {
 
 
             <nav className='navbar'>
-
                 <ul>
-
                     <li>
                         <a href="#about">
                             <select className='aboutus'>
@@ -462,25 +464,21 @@ function App() {
                                             </span>
 
                         <h3 className='new_launch '>
-
-                          
-                         
-                      
                          New Launches
                         </h3>
 
-
-                             
                         </div>
-                      
-
                 </div>
+                 
                 <div className='carouselItem'>
                     <div className='posterBlock1'
+                         ref={prd_pen}
                         onMouseEnter={(e) => drawPen(".posterBlock1", ".posterBlock1 img", '.marker_line1', "red")}
                         onMouseLeave={() => removeDrawPen(".posterBlock1", ".posterBlock1 img", '.marker_line1', "white")}
                     >
-                        <img src="https://luxorpen.com/images/bp/xonox-bp/black-m.jpg" />
+                        
+                        <LazyLoadImage src={'https://luxorpen.com/images/bp/xonox-bp/black-m.jpg'} id='img1' alt="Image Alt" />
+                        {/* <img src="https://luxorpen.com/images/bp/xonox-bp/black-m.jpg" /> */}
                         <div className='textBlock'>
                             <div className='marker_line1'> </div>
                             <span className='title'>
@@ -655,29 +653,25 @@ function App() {
 
 
                 <div className='home-container'>
+                
                     <div className="homeImg-luxor ">
+                     
                         <p style={{
                             padding: "70px",
                             fontSize: "25px",
-                            color: "rgba(61, 57, 59, 0.69)"
+                            color: "rgba(61, 57, 59, 0.69)",
+                            width:"100vw"
                         }}>
 
-                            <div className="look-img-cont" style={{
-                                // display: "flex",
-                                // gap: "5%",
-                            }}>
+                            <div className="look-img-cont" >
                                 <ImageContainer src={I1} t1="up your presentation " t2="Game" />
                                 <ImageContainer src={I2} t1="Spark your creativity with" t2="Luxor pens" />
                                 <ImageContainer src={I3} t1="How to choose the  " t2="Best highlighter pen " />
 
-                            </div>
-
-
-
-
-
-                        </p>
-                    </div></div>
+                                 </div>
+                          </p>
+                      </div>
+             </div>
             </section>
 
 

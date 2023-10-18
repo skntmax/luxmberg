@@ -52,6 +52,7 @@
 
 .image_cont{
      position: relative;
+     
 }
 
 .img_abs{
@@ -146,9 +147,12 @@
 }
 
 
+
+
+
 /* -----------------------------------media query--------------------------*/
 
-@media (max-width: 768px) {
+@media( max-width: 768px ) {
 
      .logo img {
           /* margin-top: 0; */
