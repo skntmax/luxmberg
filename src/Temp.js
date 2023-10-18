@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import './assets/css/product_animation.css';
+import './assets/css/hp.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import marker_pen from './assets/marker.png'
 import { Tween } from 'react-gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import PrdImageOne from './assets/17.png'
-import PrdImageTwo from './assets/19.png'
-import PrdImageThree from './assets/21.png'
+
 // import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
 import Image from './assets/homeBanner.jpg'
@@ -44,11 +42,14 @@ import Image26 from './assets/Lineart.png'
 import Image27 from './assets/pennib.png'
 import { Link } from 'react-router-dom';
 
+gsap.registerPlugin(ScrollTrigger);
+
+
+
+
 function App() {
-    
-    
-    gsap.registerPlugin(ScrollTrigger);
-    
+
+
     useEffect(() => {
 
         document.getElementsByClassName(
@@ -78,14 +79,13 @@ function App() {
 
 
         gsap.from(text_div, {
-            x: -220,
+            x: -150,
             stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
             duration: 2,
             opacity: 0,
             scrollTrigger: {
                 trigger: text_div,
-                toggleActions:"restart pause resume reset", 
-
+                markers: true,
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
@@ -100,8 +100,7 @@ function App() {
             yoyo: true,
             scrollTrigger: {
                 trigger: text_div,
-                toggleActions:"restart pause resume reset", 
-
+                markers: true,
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
@@ -414,13 +413,13 @@ function App() {
 
                 </div>
                 <div className="home-text">
-                    <div>
+                    <div className='home-text-head'>
                     <h1>Luxor All</h1>
                     <h1>Around The World</h1>
                     </div>
                     {/* <h2>Frontend Developer</h2> */}
 
-                    <div>
+                    <div className='home-text-patra'>
                         <p>Luxor is a pioneer and a brand leader in the writing instrument industry
                             with a significant presence in the international market. Luxor is exporting
                             products to more than 106 countries across the globe including USA,
@@ -492,7 +491,6 @@ function App() {
 
                     </div>
 
- 
                     <div className='posterBlock2'
                                 onMouseEnter={(e)=>  drawPen(".posterBlock2" , ".posterBlock2 img" , '.marker_line2' , "green")}
                                  onMouseLeave={() =>removeDrawPen(".posterBlock2" , ".posterBlock2 img" ,'.marker_line2' , "white" ) }
@@ -538,58 +536,25 @@ function App() {
                         </div>
                     </div>
                     <div class="product-container">
-
-                      <div className='prd-1'>
-
-                      <div class="product-box"    onMouseEnter={()=> visibleProduct(".my_image1" ,".prd_img_hover1" , 'prd-1') }
-                                 onMouseLeave={()=> HiddenVisibleProduct(".my_image1" ,".prd_img_hover1" ,"prd-1")} >
+                        <div class="product-box">
                             <h3>SCHOOL</h3>
                             <div className='product-img'>
-                                 <img src={Image1}  className="my_image1"      />
-                                           <div className='prd_img_hover1' > 
-                                                <img src={PrdImageOne} className='prd_image_one' />
-                                             </div>
-                             </div>
+                                <img src={Image1} alt='' />
+                            </div>
+
                         </div>
-
-                         
-                      </div>
-                     
-
-                      <div className='prd-2'>
-
-                      <div class="product-box"    onMouseEnter={()=> visibleProduct(".my_image2" ,".prd_img_hover2" , 'prd-2') }
-                                 onMouseLeave={()=> HiddenVisibleProduct(".my_image2" ,".prd_img_hover2" ,"prd-2")} >
+                        <div class="product-box">
                             <h3>ART</h3>
                             <div className='product-img'>
-                            <img src={Image2} alt='my_image2' />
-                                           <div className='prd_img_hover2' > 
-                                                <img src={PrdImageTwo} className='prd_image_two' />
-                                             </div>
-                             </div>
+                                <img src={Image2} alt='' />
+                            </div>
                         </div>
-
-                         
-                      </div>
-
-
-                      
-                      <div className='prd-3'>
-
-                            <div class="product-box"    onMouseEnter={()=> visibleProduct(".my_image3" ,".prd_img_hover3" , 'prd-3') }
-                                        onMouseLeave={()=> HiddenVisibleProduct(".my_image3" ,".prd_img_hover3" ,"prd-3")} >
-                                  <h3>OFFICE</h3>
-                                    <div className='product-img'> 
-                                     <img src={Image3} alt='my_image3' />
-                                                <div className='prd_img_hover3' > 
-                                                        <img src={PrdImageThree} className='prd_image_three' />
-                                                    </div>
-                                    </div>
-                                </div>
-                      </div>
-                     
-
-                    
+                        <div class="product-box">
+                            <h3>OFFICE</h3>
+                            <div className='product-img'>
+                                <img src={Image3} alt='' />
+                            </div>
+                        </div>
 
                     </div>
                     <div className='product-btn'>
@@ -664,8 +629,8 @@ function App() {
                 </div>
             </section>
 
-            <div className='art-gallery'>
-                <div className='Art_gallery_button' style={{ top: "40%" }}>
+            <div className='art-gallery' style={{height: "100%", width: "100%"}}>
+                <div className='Art_gallery_button' style={{ top: "40%", height: "auto", width: "31%", fontSize: "4vw", padding: "1%", zIndex: "0"}}>
                 </div>
 
                 <img src={ArtGallery} style={{
