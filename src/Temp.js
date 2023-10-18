@@ -128,7 +128,7 @@ function App() {
                 toggleActions:"restart pause resume reset", 
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
-                end: "bottom 50%",
+                end: "bottom 70%",
               },
     
         })
