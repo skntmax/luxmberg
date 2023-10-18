@@ -1,7 +1,20 @@
 .navbar {
-     margin-top: 10%;
+     /* margin-top: 10%; */
      position: fixed;
      background-color: #fff;
+ }
+
+ .navbar a {
+     padding: 0;
+ }
+
+ .navbar ul {
+     display: flex;
+     align-items: center;
+     width: 100%;
+     justify-content: space-evenly;
+     padding: 0;
+     /* background-color: aqua; */
  }
 
  .header {
@@ -80,6 +93,37 @@
      width: 75vw;
 }
 
+/* --------------------------------------------------------heading--------------- */
+
+.award-heading h2 {
+     font-size: 3.7vw;
+}
+
+.certi-heading h2 {
+     font-size: 3.7vw;
+}
+
+.footer-heading1 h2 {
+     font-size: 3.7vw;
+}
+
+.luxor-heading h2 {
+     font-size: 3.7vw;
+}
+
+.org-heading h2 {
+     font-size: 3.7vw;
+}
+
+.heading h2 {
+     font-size: 3.7vw;
+}
+
+.heading1 h2 {
+     font-size: 3.7vw;
+
+}
+
 
 /* -----------------------------------media query--------------------------*/
 
@@ -119,5 +163,44 @@
      .marker-container {
           width: 100vw;
           padding: 0 2% 0 2%;
+     }
+
+     ------------------------------heading-----------------
+
+     .award-heading h2 {
+          font-size: 5.7vw;
+     }
+     
+     .certi-heading h2 {
+          font-size: 5.3vw;
+     }
+     
+     .footer-heading1 h2 {
+          font-size: 5.3vw;
+     }
+     
+     .luxor-heading h2 {
+          font-size: 5.3vw;
+     }
+     
+     .org-heading h2 {
+          font-size: 5.3vw;
+     }
+     
+     .heading h2 {
+          font-size: 5.3vw;
+     }
+     
+     .heading1 h2 {
+          font-size: 5.3vw;
+     
+     }
+     .home1-img img {
+          width: auto;
+          height: 100%;
+     }
+
+     .home1-img  {
+          margin-bottom: 20%;
      }
 }

@@ -596,7 +596,7 @@ function App() {
                     <h2 style={{
                         lineHeight: "80%",
                         color: "green",
-                        fontSize: "5vw",
+                        fontSize: "4vw",
                         paddingTop: "5%"
                     }}>Let's save the <br /> environment with Luxor</h2>
                 </div>
