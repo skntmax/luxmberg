@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import './assets/css/product_animation.css';
+import './assets/css/hp.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import marker_pen from './assets/marker.png'
 import { Tween } from 'react-gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import PrdImageOne from './assets/17.png'
-import PrdImageTwo from './assets/19.png'
-import PrdImageThree from './assets/21.png'
+
 // import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
 import Image from './assets/homeBanner.jpg'
@@ -44,11 +42,14 @@ import Image26 from './assets/Lineart.png'
 import Image27 from './assets/pennib.png'
 import { Link } from 'react-router-dom';
 
+gsap.registerPlugin(ScrollTrigger);
+
+
+
+
 function App() {
-    
-    
-    gsap.registerPlugin(ScrollTrigger);
-    
+
+
     useEffect(() => {
 
         document.getElementsByClassName(
@@ -61,11 +62,11 @@ function App() {
 
 
         gsap.to(sections,
-<<<<<<< HEAD
             {
                 duration: 2,
-                x: -150,
+                x: -250,
                 repeat: -1,
+                opacity: 1,
                 yoyo: true,
                 scrollTrigger: {
                     trigger: sections,
@@ -76,48 +77,24 @@ function App() {
                     markers: true,
                 },
             });
-=======
-        {  
-            duration:2,
-            x:-150,
-            repeat:-1,
-            yoyo:true,
-        scrollTrigger: {
-            trigger: sections,
-            toggleActions:"restart pause resume reset", 
-
-            onToggle: self => console.log("toggled, isActive:", self.isActive),
-            start: "top 70%",
-            end: "bottom 50%",
-              },    
-          });
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
 
 
         gsap.from(text_div, {
-            x: -220,
+            x: -150,
             stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
             duration: 2,
             opacity: 0,
             scrollTrigger: {
                 trigger: text_div,
-                toggleActions:"restart pause resume reset", 
-
+                markers: true,
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
-<<<<<<< HEAD
                 markers: true,
             },
         });
 
         gsap.to(text_div, {
-=======
-              },
-          });
-    
-          gsap.to(text_div , {
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
             x: 70,
             opacity: 1,
             duration: 2,
@@ -125,12 +102,10 @@ function App() {
             yoyo: true,
             scrollTrigger: {
                 trigger: text_div,
-                toggleActions:"restart pause resume reset", 
-
+                markers: true,
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 70%",
                 end: "bottom 50%",
-<<<<<<< HEAD
                 markers: true,
             },
 
@@ -141,95 +116,11 @@ function App() {
         newLaumch()
 
     }, [])
-=======
-              },
-    
-           })
-
-
- 
-              productBackGround()
-              newLaumch()
-      
-    } ,[])
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
-
-   
-
-    function productBackGround() {
-        
-        let prd_bc = document.querySelectorAll(".product-box");
-        let tl  =  gsap.timeline({
-            paused: true,
-            scrollTrigger: {
-                trigger: prd_bc,
-                toggleActions:"restart pause resume reset", 
-                onToggle: self => console.log("toggled, isActive:", self.isActive),
-                start: "top 70%",
-                end: "bottom 50%",
-              },
-    
-        })
-            tl.to(prd_bc, {
-            duration: 1,
-            opacity: 1,
-            ease: 'expo.inOut',
-            })
-            
-            tl.from(prd_bc, {
-                duration: 1,
-                opacity: 0,
-                stagger: 0.1,
-                ease: 'expo.inOut',
-              }, "-=0.5");
-              tl.reverse();
-             
-// tl.from(links, {
-//   duration: 1,
-//   opacity: 0,
-//   y: 20,
-//   stagger: 0.1,
-//   ease: 'expo.inOut',
-// }, "-=0.5");
-
-// tl.reverse();
-
-// ham.addEventListener('click', () => {
-//   tl.reversed(!tl.reversed());
-// });
-
-
-        // gsap.to(prd_bc , 
-        //      {
-        //                 x:-220 ,
-        //             duration:2,
-        //             width:0,
-        //             opacity:5,
-        //      } ,
-              
-        //       {
-        //         x:200,
-
-        //      opacity: 1,
-        //     duration:2,
-        //     scrollTrigger: {
-        //         trigger: prd_bc,
-        //         toggleActions:"restart pause resume reset", 
-        //         onToggle: self => console.log("toggled, isActive:", self.isActive),
-        //         start: "top 70%",
-        //         end: "top 30%",
-        //         markers:true
-        //       },
-    
-        //    })
-
-     }
 
 
     function newLaumch() {
 
         let new_launch = document.querySelectorAll(".new_launch");
-<<<<<<< HEAD
         let marker_marks = document.querySelectorAll(".marker_marks");
 
         // gsap.to(new_launch,
@@ -264,52 +155,6 @@ function App() {
 
 
 
-=======
-        let pen_marker_line = document.querySelectorAll(".pen_marker_line");
-        
-        let marker_marks = document.querySelectorAll(".new_launch_marker img");
-        
-        gsap.to(marker_marks,
-             {  
-                duration:2,
-                x:400,
-            scrollTrigger: {
-                trigger: marker_marks,
-                toggleActions:"restart pause resume reset", 
-                onToggle: self => console.log("toggled, isActive:", self.isActive),
-                start: "top 70%",
-                end: "bottom 20%",
-                  },    
-              });
-
-              gsap.fromTo(pen_marker_line,{
-                    duration:2,
-                    width:0,
-                    opacity:5,
-              } ,
-
-
-                {  
-                   duration:2,
-                   width:400,
-                   height: "100%",
-                   opacity:0,
-                   borderRadius:"  0 0 50% 50% ",
-                    height: "fit-content",
-                    backgroundColor: "rgba(99, 97, 7, 0.8)",
-                    zIndex:-2,
-                   scrollTrigger: {
-                   trigger: pen_marker_line,
-                  toggleActions:"restart pause resume restart", 
-
-                   onToggle: self => console.log("toggled, isActive:", self.isActive),
-                   start: "top 70%",
-                   end: "bottom 50%",
-                     },    
-                 });
-    
-            
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
 
     }
 
@@ -337,7 +182,6 @@ function App() {
 
         gsap.to(marker_line, {
             //  backgroundColor:"red",
-<<<<<<< HEAD
             borderTop: `8px solid ${pen_colour}`,
             width: 100,
             scale: 1,
@@ -384,91 +228,6 @@ function App() {
 
 
     }
-=======
-           borderTop: `8px solid ${pen_colour}`,
-            width:100,
-            scale:1 , 
-            dirat1ion:2
-         } )
- 
-
- 
-            }
-
-
-             function removeDrawPen(pen_div , pen_image_div, pen_draw_div,  pen_colour) {
-                let penDiv = document.querySelectorAll(pen_div    );
-                let Image =  document.querySelectorAll(pen_image_div)
-                let marker_line = document.querySelectorAll(pen_draw_div)
-
-                    gsap.to( penDiv , {
-                        backgroundColor:"white",
-                        scale:1 , 
-                        diration:0,
-                        width:245,
-                    } )
-
-                    gsap.to( Image , {
-                        //  backgroundColor:"red",
-                        x:0,
-                        width:245,
-                        height:"86%",
-                        scale:1 , 
-                        dirat1ion:2,
-                        yoyo:true
-                     } )
-                            
-                        gsap.to( marker_line , {
-                            //  backgroundColor:"red",
-                            borderTop: `8px solid ${pen_colour}`,
-                            x:0,
-                            width:0,
-                            scale:1 , 
-                            dirat1ion:2
-                        } )
- 
-}
- 
-
-        function visibleProduct(cl_name,prd_image , current_div_class ){
-            let prd_img_hover = document.querySelectorAll( cl_name);
-
-            gsap.to( prd_image   , {
-                zIndex: 20,
-                opacity:1,
-                scale:1 , 
-                diration:2,
-                display: "flex",
-                top:"100%" 
-            } )
-
-            gsap.to( `${prd_image} img`   , {
-                    scale:1 , 
-                    scale: 1,
-                    height: "90px",
-                    width: "100%",
-            } )
-
-
-       }
-
-       function HiddenVisibleProduct(cl_name , prd_image, current_div_class  ){
-
-        let prd_img_hover = document.querySelectorAll( cl_name);
-         
-        gsap.to( prd_image   , {
-            scale:1 , 
-            diration:2,
-            opacity:0,
-            top:"50%" ,
-            display: "none",
-        } )
-
-   }
-
-
- 
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
 
     return (
         <>
@@ -538,13 +297,13 @@ function App() {
 
                 </div>
                 <div className="home-text">
-                    <div>
+                    <div className='home-text-head'>
                     <h1>Luxor All</h1>
                     <h1>Around The World</h1>
                     </div>
                     {/* <h2>Frontend Developer</h2> */}
 
-                    <div>
+                    <div className='home-text-patra'>
                         <p>Luxor is a pioneer and a brand leader in the writing instrument industry
                             with a significant presence in the international market. Luxor is exporting
                             products to more than 106 countries across the globe including USA,
@@ -560,7 +319,6 @@ function App() {
 
             <section className='launch'>
                 <div class="heading">
-<<<<<<< HEAD
 
 
                     <h2 className='new_launch'>
@@ -575,46 +333,6 @@ function App() {
                              </span> */}
                         New Launches
                     </h2>
-=======
-                    
-
-                        <div style={{
-                            display:'flex',
-                            width:"100vw",
-                       alignItems:"center",
-                            justifyContent:"center",
-                        }}>
-                        
-
-                                <span  className='new_launch_marker' style={{  
-                                                position:"relative",
-                                                width: "100px",
-                                                zIndex:"1"
-                                        }} >  
-             
-                        <div className='pen_marker_line'  >
-                        <img src={marker_pen} width={200} 
-                            style={{
-                                position:"relative",
-                            }} className='marker_marks'/>
-
-                            </div>
-                            
-                                            </span>
-
-                        <h3 className='new_launch '>
-
-                          
-                         
-                      
-                         New Launches
-                        </h3>
-
-
-                             
-                        </div>
-                      
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
 
                 </div>
                 <div className='carouselItem'>
@@ -633,15 +351,9 @@ function App() {
 
                     </div>
 
- 
                     <div className='posterBlock2'
-<<<<<<< HEAD
                         onMouseEnter={(e) => drawPen(".posterBlock2", ".posterBlock2 img", '.marker_line2', "green")}
                         onMouseLeave={() => removeDrawPen(".posterBlock2", ".posterBlock2 img", '.marker_line2', "white")}
-=======
-                                onMouseEnter={(e)=>  drawPen(".posterBlock2" , ".posterBlock2 img" , '.marker_line2' , "green")}
-                                 onMouseLeave={() =>removeDrawPen(".posterBlock2" , ".posterBlock2 img" ,'.marker_line2' , "white" ) }
->>>>>>> bc22017c7722e74ac0ced3786e885eb8293315f1
                     >
                         <img src="	https://luxorpen.com/images/hl/textliter-hl/text-li-green-m.jpg" />
                         <div className='textBlock'>
@@ -684,58 +396,25 @@ function App() {
                         </div>
                     </div>
                     <div class="product-container">
-
-                      <div className='prd-1'>
-
-                      <div class="product-box"    onMouseEnter={()=> visibleProduct(".my_image1" ,".prd_img_hover1" , 'prd-1') }
-                                 onMouseLeave={()=> HiddenVisibleProduct(".my_image1" ,".prd_img_hover1" ,"prd-1")} >
+                        <div class="product-box">
                             <h3>SCHOOL</h3>
                             <div className='product-img'>
-                                 <img src={Image1}  className="my_image1"      />
-                                           <div className='prd_img_hover1' > 
-                                                <img src={PrdImageOne} className='prd_image_one' />
-                                             </div>
-                             </div>
+                                <img src={Image1} alt='' />
+                            </div>
+
                         </div>
-
-                         
-                      </div>
-                     
-
-                      <div className='prd-2'>
-
-                      <div class="product-box"    onMouseEnter={()=> visibleProduct(".my_image2" ,".prd_img_hover2" , 'prd-2') }
-                                 onMouseLeave={()=> HiddenVisibleProduct(".my_image2" ,".prd_img_hover2" ,"prd-2")} >
+                        <div class="product-box">
                             <h3>ART</h3>
                             <div className='product-img'>
-                            <img src={Image2} alt='my_image2' />
-                                           <div className='prd_img_hover2' > 
-                                                <img src={PrdImageTwo} className='prd_image_two' />
-                                             </div>
-                             </div>
+                                <img src={Image2} alt='' />
+                            </div>
                         </div>
-
-                         
-                      </div>
-
-
-                      
-                      <div className='prd-3'>
-
-                            <div class="product-box"    onMouseEnter={()=> visibleProduct(".my_image3" ,".prd_img_hover3" , 'prd-3') }
-                                        onMouseLeave={()=> HiddenVisibleProduct(".my_image3" ,".prd_img_hover3" ,"prd-3")} >
-                                  <h3>OFFICE</h3>
-                                    <div className='product-img'> 
-                                     <img src={Image3} alt='my_image3' />
-                                                <div className='prd_img_hover3' > 
-                                                        <img src={PrdImageThree} className='prd_image_three' />
-                                                    </div>
-                                    </div>
-                                </div>
-                      </div>
-                     
-
-                    
+                        <div class="product-box">
+                            <h3>OFFICE</h3>
+                            <div className='product-img'>
+                                <img src={Image3} alt='' />
+                            </div>
+                        </div>
 
                     </div>
                     <div className='product-btn'>
@@ -810,8 +489,8 @@ function App() {
                 </div>
             </section>
 
-            <div className='art-gallery'>
-                <div className='Art_gallery_button' style={{ top: "40%" }}>
+            <div className='art-gallery' style={{height: "100%", width: "100%"}}>
+                <div className='Art_gallery_button' style={{ top: "40%", height: "auto", width: "31%", fontSize: "4vw", padding: "1%", zIndex: "0"}}>
                 </div>
 
                 <img src={ArtGallery} style={{

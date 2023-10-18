@@ -1,5 +1,7 @@
 import React from 'react'
 import './../App.css'
+// import './../assets/'
+// import './.assets./css./hp.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 
 import productimg1 from './../assets/product1.png'
@@ -8,14 +10,15 @@ import popular1 from './../assets/popular1.png'
 import popular2 from './../assets/popular2.png'
 // import Marker1 from './../assets/1'
 // import Marker2 from './../assets/10.png'
-// import Marker3 from './../assets/10.png'
+import MarkerW from './../assets/Washable.png'
 import Marker4 from './../assets/6.png'
 import Marker5 from './../assets/8.png'
-// import Marker6 from './../assets/10.png'
-// import Marker7 from './../assets/10.png'
-// import Marker7 from './../assets/10.png'
-// import Marker7 from './../assets/10.png'
+import MarkerT from './../assets/Non Toxic.png'
+import Marker6 from './../assets/6.png'
+import Marker7 from './../assets/0.png'
 import Background from './../assets/Lineart.png'
+import Dyn from './../assets/didYN.png'
+
 
 
 
@@ -124,10 +127,10 @@ const ProductPage = () => {
                     {/* ----------------part 3----- */}
                     <div className='round-img-cont'>
                         <div className='toxic-img'>
-                            <img src={Marker4} alt=''/>
+                            <img src={MarkerW} alt=''/>
                         </div>
                         <div className='toxic-img'>
-                            <img src={Marker4} alt=''/>
+                            <img src={MarkerT} alt=''/>
                         </div>
                     </div>
                     {/* ----------------part 4----- */}
@@ -143,13 +146,13 @@ const ProductPage = () => {
                                 Marker</p>
                         </div>
                         <div className='broadline-card'>
-                            <img src={Marker5} alt='' />
+                            <img src={Marker7} alt='' />
                         </div>
                     </div>
                     {/* ----------------part 5-----  */}
                     <div className='dyn-cont'>
                         <div className='dyn-img'>
-                        <img src={Marker4} alt='' />
+                        <img src={Dyn} alt='' />
                         </div>
                         <div className='dyn-para'>
                             <p>The colours of the rainbow always go in the same colour:
