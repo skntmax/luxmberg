@@ -1542,8 +1542,8 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 
 /* ------------------------------extra code------------------------ */
 .navbar {
-  margin-top: 5%;
   position: fixed;
+  padding: 30px 0;
 }
 
 .look-img-cont {
@@ -1573,6 +1573,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
+  height: 500px;
 }
 
 .btn-box{
