@@ -50,7 +50,7 @@ const ProductPage = () => {
 
                 <nav>
 
-                    <ul className='navbar'>
+                    <ul className='navbar2'>
                         <li>
                             <a href="#about">
                                 <select className='aboutus'>
