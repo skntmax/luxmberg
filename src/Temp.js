@@ -109,11 +109,7 @@ function App() {
     
            })
 
-
-
- 
            
-          
               productBackGround()
               newLaumch()
       
