@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import HomePage from './Temp'
+import HomePage from './App'
 import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,

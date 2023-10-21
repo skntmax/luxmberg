@@ -13,49 +13,13 @@ import pcw from './../assets/images/aboutpage/pcw.jpg';
 import plexconsil from './../assets/images/aboutpage/plexconsil.jpg';
 import wim from './../assets/images/aboutpage/wim.jpg';
 import feo from './../assets/images/aboutpage/feo.jpg';
+import Header from './header/Header'
 
 const Aboutus = () => {
 
     return (
         <>
-            <header className='header'>
-
-                <Link to='/' className='logo'>
-                    <img src='https://luxorpen.com/images/logo/logo.png' />
-                </Link>
-
-                <div className='search'>
-                    <input className='inputData' placeholder='Search' />
-                    <AiOutlineSearch className='searchIcon' />
-                    <select className='selectData' onChange={(e) => { }}>
-                        <option value="">Lang</option>
-                        <option value="Enh">English</option>
-                        <option value="Hin">Hindi</option>
-                    </select>
-                </div>
-            </header>
-
-            <nav>
-
-                <ul className='navbar2'>
-                    <li>
-                        <a href="#about">
-                            <select className='aboutus'>
-                                <option value=""> <Link to="/about">  About Us </Link></option>
-                                <option value="Vision">Vision</option>
-                                <option value="Mission">Mission</option>
-                                <option value="Milstone">Milstone</option>
-                            </select>
-                        </a>
-                    </li>
-
-                    <li><Link href="/product">Product</Link></li>
-                    <li><a href="#services">E- Catalogue</a></li>
-                    <li><a href="#contact">Media</a></li>
-                    <li><a href="#contact">Art Gallery</a></li>
-                    <li><a href="#contact">Career</a></li>
-                </ul>
-            </nav>
+             <Header />
             <section className='pb-5 pt_8'>
                 <div className="container">
                     <img src={banner} alt="banner" className='w-100 img-fluid' />
