@@ -2,9 +2,9 @@
      /* margin-top: 10%; */
      position: fixed;
      background-color: #fff;
- }
+}
 
- .navbar2 {
+.navbar2 {
      width: 100%;
      display: flex;
      justify-content: space-evenly;
@@ -12,23 +12,23 @@
      font-weight: 450;
      padding-top: 2%;
      padding-bottom: 0;
- }
+}
 
- .navbar2 a {
+.navbar2 a {
      font-size: 2vw;
      color: black;
- }
+}
 
- .productItem img {
+.productItem img {
      width: 100vw;
      margin-top: -60px;
- }
+}
 
- .navbar a {
+.navbar a {
      padding: 0;
- }
+}
 
- .navbar ul {
+.navbar ul {
      display: flex;
      align-items: center;
      width: 100%;
@@ -36,33 +36,33 @@
      padding: 0;
      margin-top: 1%;
      /* background-color: aqua; */
- }
-
- .header {
-     padding: 1.5% 4%;
- }
-
- .aboutus {
-     font-size: 2vw;
- }
-
- .navbar a {
-     font-size: 2vw;
- } 
-
-.image_cont{
-     position: relative;
-     
 }
 
-.img_abs{
-    position: absolute;
-    text-align: center;
-    font-size: 30px;
-    color:aliceblue;
+.header {
+     padding: 1.5% 4%;
+}
+
+.aboutus {
+     font-size: 2vw;
+}
+
+.navbar a {
+     font-size: 2vw;
+}
+
+.image_cont {
+     position: relative;
+
+}
+
+.img_abs {
+     position: absolute;
+     text-align: center;
+     font-size: 30px;
+     color: aliceblue;
      z-index: 1;
      top: 40%;
-     left:5%
+     left: 5%
 }
 
 .toxic-img {
@@ -99,7 +99,7 @@
 }
 
 .broadline-cont {
-   gap: 1%;  
+     gap: 1%;
 }
 
 .broadline-card {
@@ -146,13 +146,81 @@
 
 }
 
+.fs-10 {
+     font-size: 10px;
+}
+
+.fs-14 {
+     font-size: 14px;
+}
+
+.fs-16 {
+     font-size: 16px;
+}
+
+.fs-18 {
+     font-size: 18px;
+}
+
+.fs-20 {
+     font-size: 20px;
+}
+
+.fs-24 {
+     font-size: 24px;
+}
+
+.fs-26 {
+     font-size: 26px;
+}
+
+.fs-30 {
+     font-size: 30px;
+}
+
+.fs-40 {
+     font-size: 30px;
+}
+
+.fw-600 {
+     font-weight: 600;
+}
+
+.fw-700 {
+     font-weight: 700;
+}
+
+.text_justify {
+     text-align: justify;
+}
+
+.fs-50 {
+     font-size: 50px;
+}
+
+.text_grey {
+     color: #626161;
+}
+
+.text_darkgrey {
+     color: #2b2a29;
+}
+
+.text_red {
+     color: #d90427;
+}
+
+.lh_1 {
+     line-height: 1.4;
+}
+
 
 
 
 
 /* -----------------------------------media query--------------------------*/
 
-@media( max-width: 768px ) {
+@media(max-width: 768px) {
 
      .logo img {
           /* margin-top: 0; */
@@ -161,6 +229,7 @@
      .header {
           height: 17vw;
      }
+
      .main-broad-container {
           flex-direction: column;
      }
@@ -168,7 +237,8 @@
      .pen-container {
           transform: rotate(90deg);
           height: 100px;
-          width: 100px;     }
+          width: 100px;
+     }
 
      .pen-container img {
           height: 300px;
@@ -184,48 +254,47 @@
           height: 235px;
           width: 234px;
      } */
-     
+
      .marker-container {
           width: 100vw;
           padding: 0 2% 0 2%;
      }
 
-     ------------------------------heading-----------------
-
-     .award-heading h2 {
+     ------------------------------heading----------------- .award-heading h2 {
           font-size: 5.7vw;
      }
-     
+
      .certi-heading h2 {
           font-size: 5.3vw;
      }
-     
+
      .footer-heading1 h2 {
           font-size: 5.3vw;
      }
-     
+
      .luxor-heading h2 {
           font-size: 5.3vw;
      }
-     
+
      .org-heading h2 {
           font-size: 5.3vw;
      }
-     
+
      .heading h2 {
           font-size: 5.3vw;
      }
-     
+
      .heading1 h2 {
           font-size: 5.3vw;
-     
+
      }
+
      .home1-img img {
           width: auto;
           height: 100%;
      }
 
-     .home1-img  {
+     .home1-img {
           margin-bottom: 20%;
      }
 }

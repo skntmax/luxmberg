@@ -9,7 +9,7 @@ import {
   Link,
 } from "react-router-dom";
 import ProductPage from "./Components/Product";
-import AboutUs from "./Components/AboutUs";
+import AboutUs from "./Components/Aboutus";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     element: <ProductPage />,
   },
   {
-    path: "Aboutus",
+    path: "about",
     element: <AboutUs />,
   },
 
