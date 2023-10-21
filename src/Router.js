@@ -9,6 +9,7 @@ import {
   Link,
 } from "react-router-dom";
 import ProductPage from "./Components/Product";
+import Aboutus from "./Components/Aboutus";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "product",
     element: <ProductPage />,
+  },
+  {
+    path: "aboutus",
+    element: <Aboutus />,
   },
 ])
 

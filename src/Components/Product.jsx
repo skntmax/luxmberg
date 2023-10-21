@@ -54,7 +54,9 @@ const ProductPage = () => {
                         <li>
                             <a href="#about">
                                 <select className='aboutus'>
+                                <Link to='/Aboutus'>
                                     <option value="">About Us</option>
+                                    </Link>
                                     <option value="Vision">Vision</option>
                                     <option value="Mission">Mission</option>
                                     <option value="Milstone">Milstone</option>
