@@ -186,6 +186,7 @@ const Aboutus = () => {
                             </ul>
                         </div>
                         <div>
+                            
                             <h3 className='fs-20 text-white mb-4'>Explore</h3>
 
                             <ul className='text-white '>
