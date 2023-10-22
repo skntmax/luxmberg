@@ -54,7 +54,7 @@ const ProductPage = () => {
                         <li>
                             <a href="#about">
                                 <select className='aboutus'>
-                                <Link to='/Aboutus'>
+                                <Link to='/About'>
                                     <option value="">About Us</option>
                                     </Link>
                                     <option value="Vision">Vision</option>
@@ -65,7 +65,7 @@ const ProductPage = () => {
                         </li>
 
                         <li><Link href="/product">Product</Link></li>
-                        <li><a href="#services">E- Catalogue</a></li>
+                        <li><Link to="/contact">Contact</Link></li>
                         <li><a href="#contact">Media</a></li>
                         <li><a href="#contact">Art Gallery</a></li>
                         <li><a href="#contact">Career</a></li>

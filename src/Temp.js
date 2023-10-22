@@ -385,7 +385,7 @@ function App() {
                     </li>
 
                     <li><Link to="/product">Product</Link></li>
-                    <li><a href="#services">E- Catalogue</a></li>
+                    <li><Link to="/contact">Contact</Link></li>
                     <li><a href="#contact">Media</a></li>
                     <li><a href="#contact">Art Gallery</a></li>
                     <li><a href="#contact">Career</a></li>
