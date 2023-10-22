@@ -9,9 +9,9 @@ const [link , setLink ]  = useState('')
         <React.Fragment>
 
                 <header className='header'>
-                <a href='#' className='logo'>
+                <Link to='/' className='logo'>
                     <img src='https://luxorpen.com/images/logo/logo.png' />
-                </a>
+                </Link>
                 <div className='search'>
                     <input className='inputData' placeholder='Search' />
                     <AiOutlineSearch className='searchIcon' />

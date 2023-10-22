@@ -4,10 +4,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';  
 import Home_Page_Banner from './../../../assets/Home Page Main Banner/Home Page Banner.jpg'  
 import Home_Page_Banner2 from './../../../assets/Home Page Main Banner/Home page BAanner 1.jpg'  
-import Home_Page_Banner3 from './../../../assets/Home Page Main Banner/Home page baner 2 .jpg'  
+import Home_Page_Banner3 from './../../../assets/Home Page Main Banner/Home page baner 2 .jpg'
+   
+
 export default class Carasol extends Component {  
-
-
+     
     constructor(props) {
          super(props)
           this.state ={
@@ -18,6 +19,7 @@ export default class Carasol extends Component {
              }
           }
     }
+     
     render() {  
         return (  
             <Carousel autoPlay={true} showThumbs={false} infiniteLoop={true} interval={2000}>  
