@@ -189,7 +189,7 @@ const Aboutus = () => {
                             <h3 className='fs-20 text-white mb-4'>Explore</h3>
 
                             <ul className='text-white '>
-                                <li className='mb-2 d-block fs-14'>  <Link className='text-white' to='/aboutus'>Aboutus</Link></li>
+                                <li className='mb-2 d-block fs-14'>  <Link className='text-white' to='/aboutus'>About</Link></li>
                                 <li className='mb-2 d-block fs-14'>Career</li>
                                 <li className='mb-2 d-block fs-14'>News & Media</li>
                                 <li className='mb-2 d-block fs-14'>Partners/Resellers</li>
