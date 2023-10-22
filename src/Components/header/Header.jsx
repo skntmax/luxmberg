@@ -30,16 +30,16 @@ const [link , setLink ]  = useState('')
                     <li>
                     <a  >
                         <select className='aboutus' onChange={e=>  window.location.href= e.target.value  }>
-                            
                             <option selected  hidden  > choose </option>
                             <option value="about" > About Us  </option>
+                            <option value="contact" > Contact Us  </option>
                             <option value="Vision">Vision</option>
                             <option value="Mission">Mission</option>
                             <option value="Milstone">Milstone</option>
                         </select>
                     </a>
                     </li>
-
+                     
                     <li><Link to="/product">Product</Link></li>
                     <li><a href="#services">E- Catalogue</a></li>
                     <li><a href="#contact">Media</a></li>
