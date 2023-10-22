@@ -24,6 +24,7 @@ import Dyn from './../assets/didYN.png'
 
 import { Link } from 'react-router-dom'
 import Header from './header/Header'
+import Footer from './Footer/Footer'
 
 const ProductPage = () => {
     return (
@@ -160,7 +161,7 @@ const ProductPage = () => {
 
                 </div>
 
-                <div className='footer-copyright'>
+                {/* <div className='footer-copyright'>
                     <div className='copyright-para'>
                         <p>© Copyright Luxor 2023 | All rights reserved</p>
                     </div>
@@ -172,8 +173,12 @@ const ProductPage = () => {
                         <i></i>
                         <i></i>
                     </div>
-                </div>
+                </div> */}
             </section>
+
+
+<Footer />
+            
         </>
     )
 }
