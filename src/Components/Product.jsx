@@ -155,10 +155,7 @@ const ProductPage = () => {
                                 <img src={popular2} alt='' />
                             </div>
                         </div>
-
                     </div>
-
-
                 </div>
 
                 {/* <div className='footer-copyright'>
@@ -177,7 +174,7 @@ const ProductPage = () => {
             </section>
 
 
-<Footer />
+            <Footer />
             
         </>
     )
