@@ -1,8 +1,8 @@
-.navbar {
-     /* margin-top: 10%; */
+/* .navbar {
+     margin-top: 10%;
      position: fixed;
      background-color: #fff;
-}
+} */
 
 .navbar2 {
      width: 100%;
@@ -14,29 +14,21 @@
      padding-bottom: 0;
 }
 
-.navbar2 a {
+/* .navbar2 a {
      font-size: 2vw;
      color: black;
-}
+} */
 
 .productItem img {
      width: 100vw;
      margin-top: -60px;
 }
 
-.navbar a {
+/* .navbar a {
      padding: 0;
-}
+} */
 
-.navbar ul {
-     display: flex;
-     align-items: center;
-     width: 100%;
-     justify-content: space-evenly;
-     padding: 0;
-     margin-top: 1%;
-     /* background-color: aqua; */
-}
+
 
 .header {
      padding: 1.5% 4%;
@@ -46,9 +38,9 @@
      font-size: 2vw;
 }
 
-.navbar a {
+/* .navbar a {
      font-size: 2vw;
-}
+} */
 
 .image_cont {
      position: relative;
@@ -218,11 +210,15 @@
      color: black;
 }
 
-.input_field{
+.input_field {
      height: 44px;
 }
-.text_width{
-width: 28%;
+
+.text_width {
+     width: 28%;
+}
+.bg_red{
+     background-color: #ed1b24;
 }
 
 
@@ -230,9 +226,7 @@ width: 28%;
 
 @media(max-width: 768px) {
 
-     .logo img {
-          /* margin-top: 0; */
-     }
+   
 
      .header {
           height: 17vw;
@@ -302,9 +296,9 @@ width: 28%;
           height: 100%;
      }
 
-     .home1-img {
+     /* .home1-img {
           margin-bottom: 20%;
-     }
+     } */
 }
 
 @media(min-width: 1299px)and (max-width: 1499px) {
@@ -312,6 +306,7 @@ width: 28%;
           background-size: 100% 100%;
      }
 }
+
 @media(min-width: 1500px) {
      .footer_bg {
           background-size: 100% 100%;

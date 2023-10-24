@@ -21,7 +21,7 @@ const Aboutus = () => {
     return (
         <>
              <Header />
-            <section className='pb-5 pt_8'>
+            <section className='py-5'>
                 <div className="container">
                     <img src={banner} alt="banner" className='w-100 img-fluid' />
 

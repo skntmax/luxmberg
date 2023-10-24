@@ -31,20 +31,20 @@ const ProductPage = () => {
         <>
             <Header />
 
-            <section className='productItem'>
+            <section className=''>
                 <div className='productItem-img'>
-                    <img src={productimg1} />
+                    <img className='img-fluid' alt='img-fluid' src={productimg1} />
                 </div>
             </section>
 
             {/* -----------------------------------broadline marker--------------------------------------- */}
 
-            <section className='main-broad-container'>
+            <section className='main-broad-container py-5'>
 
                 {/* ---------------------------------------container 1st---------- */}
 
-                <div className='pen-container'>
-                    <img src={marker} alt='' style={{
+                <div className=''>
+                    <img className='img-fluid' src={marker} alt='' style={{
 
                     }} />
                 </div>
@@ -84,13 +84,24 @@ const ProductPage = () => {
 
                     </div>
                     {/* ----------------part 3----- */}
-                    <div className='round-img-cont'>
-                        <div className='toxic-img'>
-                            <img src={MarkerW} alt='' />
+                    <div className='row mt-4'>
+                        <div className='col-md-4 mb-3'>
+                            <div className="card h-100 border-0 shadow-sm bg-transaparent">
+                                <div className="card-body">
+                                    <img className='img-fluid' src={MarkerW} alt='' />
+                                </div>
+                            </div>
                         </div>
-                        <div className='toxic-img'>
-                            <img src={MarkerT} alt='' />
+
+                        <div className='col-md-4 mb-3'>
+                            <div className="card h-100 border-0 shadow-sm bg-transaparent">
+                            <div className="card-body">
+                                
+                                <img className='img-fluid' src={MarkerT} alt='' />
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                     {/* ----------------part 4----- */}
                     <div className='broadline-cont'>
@@ -100,12 +111,12 @@ const ProductPage = () => {
                                 Marker SRP</p>
                         </div>
                         <div className='broadline-card'>
-                            <img src={Marker5} alt='' />
+                            <img className='img-fluid' src={Marker5} alt='' />
                             <p>Broadline
                                 Marker</p>
                         </div>
                         <div className='broadline-card'>
-                            <img src={Marker7} alt='' />
+                            <img className='img-fluid' src={Marker7} alt='' />
                         </div>
                     </div>
                     {/* ----------------part 5-----  */}
@@ -175,7 +186,7 @@ const ProductPage = () => {
 
 
             <Footer />
-            
+
         </>
     )
 }

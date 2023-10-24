@@ -352,38 +352,41 @@ function App() {
 
     return (
         <>
-              <Header />
-               
-              <Carasol />
+            <Header />
+
+            <Carasol />
 
 
 
-            <section className="home" >
+            <section className="py-5 overflow-hidden" >
+                <div className='container'>
+                    <div className='row mt-4'>
 
-                <div className="home1-img ">
+                        <div className="col-md-6 mb-3 home-text">
+                            <div className='home-text-head'>
+                                <h1>Luxor All</h1>
+                                <h1>Around The World</h1>
+                            </div>
 
-                    <img src={worldMap} alt="" />
 
-                </div>
-                <div className="home-text">
-                    <div className='home-text-head'>
-                        <h1>Luxor All</h1>
-                        <h1>Around The World</h1>
+                            <div className='home-text-patra'>
+                                <p>Luxor is a pioneer and a brand leader in the writing instrument industry
+                                    with a significant presence in the international market. Luxor is exporting
+                                    products to more than 106 countries across the globe including USA,
+                                    Australia, Russia, UK, Europe, UAE and many other markets. Our range of
+                                    products include - Kids Markers, Highlighters, Eco-friendly Stationeries,
+                                    O‹ce & Personal Stationeries.</p>
+                            </div>
+
+                            <div><a href="#" className="btn-bg">Explore</a></div>
+                        </div>
+                        <div className="col-md-6 mb-3 home1-img ">
+
+                            <img src={worldMap} className='img-fluid ms-md-5' alt="Map" />
+
+                        </div>
                     </div>
-                    {/* <h2>Frontend Developer</h2> */}
-
-                    <div className='home-text-patra'>
-                        <p>Luxor is a pioneer and a brand leader in the writing instrument industry
-                            with a significant presence in the international market. Luxor is exporting
-                            products to more than 106 countries across the globe including USA,
-                            Australia, Russia, UK, Europe, UAE and many other markets. Our range of
-                            products include - Kids Markers, Highlighters, Eco-friendly Stationeries,
-                            O‹ce & Personal Stationeries.</p>
-                    </div>
-
-                    <div><a href="#" className="btn-bg">Explore</a></div>
                 </div>
-
             </section>
 
             <section className='launch'>
@@ -488,20 +491,20 @@ function App() {
                         <div class="product-box">
                             <h3>SCHOOL</h3>
                             <div className='product-img'>
-                                <img src={Image1} alt='' />
+                                <img  src={Image1} alt='' />
                             </div>
 
                         </div>
                         <div class="product-box">
                             <h3>ART</h3>
                             <div className='product-img'>
-                                <img src={Image2} alt='' />
+                                <img  src={Image2} alt='' />
                             </div>
                         </div>
                         <div class="product-box">
                             <h3>OFFICE</h3>
                             <div className='product-img'>
-                                <img src={Image3} alt='' />
+                                <img  src={Image3} alt='' />
                             </div>
                         </div>
 
@@ -839,7 +842,7 @@ function App() {
                 {/* ------------------------------------- */}
 
             </section>
-<Footer />
+            <Footer />
         </>
     );
 }

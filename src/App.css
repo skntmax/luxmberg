@@ -121,7 +121,6 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 40px 2%;
-  margin-top: 2%;
   transition: 0.2s;
   z-index: 1;
 }
@@ -143,22 +142,22 @@ nav {
 }
 
 
-
+/* 
 .navbar a {
   font-size: 10px;
   padding: 0px 82px;
   color: var(--text-black-900);
   font-weight: 200;
   margin-top: 2rem;
-}
+} */
 
-.search {
+/* .search {
   display: flex;
   gap: 0.3rem;
   align-items: center;
   justify-content: center;
   margin-left: 2rem;
-}
+} */
 
 input {
   outline: none;
@@ -211,7 +210,7 @@ input {
   align-items: center;
   margin-left: 4rem;
 }
-
+/* 
 .home1-img {
   order: 2;
 }
@@ -221,11 +220,8 @@ input {
   background-size: contain;
   position: relative;
   margin-left: 200px;
-  /* filter: opacity(0.1); */
-
-  /* padding-top: 3rem; */
-
-}
+ 
+} */
 
 .btn-bg {
   display: inline-block;
@@ -300,8 +296,8 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   background: var(--bg-black-50);
 } */
 
-.posterBlock img {
-  /* padding: 20px 10px;
+/* .posterBlock img {
+  padding: 20px 10px;
   height: 86%;
   aspect-ratio: 1 / 1.4;
   width: 245px;
@@ -311,8 +307,8 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   text-align: center;
   border-radius: 0.7rem;
   box-shadow: 0px 2px 7px rgba(14 55 54/15%);
-  transition: all 400ms ease; */
-}
+  transition: all 400ms ease;
+} */
 
 
 .posterBlock img:hover {
@@ -794,13 +790,6 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   font-size: 1.5vw;
   /* margin-top: 50px; */
 }
-
-
-.arrow-btn {}
-
-.arrow-btn-left {}
-
-.arrow-btn-left {}
 
 /* ------------------------------------ */
 
@@ -1546,10 +1535,10 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 
 
 /* ------------------------------extra code------------------------ */
-.navbar {
+/* .navbar {
   position: fixed;
   padding: 30px 0;
-}
+} */
 
 .look-img-cont {
   display: flex;
@@ -1562,9 +1551,9 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   width: 100%;
 } */
 
-.home1-img img {
+/* .home1-img img {
   padding-top: 5%;
-}
+} */
 
 .home-text-patra {
   font-size: 5vw;
@@ -1648,3 +1637,6 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   background-color: #ed1b24;
   padding: 10px 22px;
 }
+.offcanvas_toggle{
+  max-width: 90%;
+} 

@@ -408,7 +408,7 @@ function App() {
 
                 <div className="home1-img ">
 
-                    <img src={worldMap} alt="" />
+                    <img className='img-fluid' src={worldMap} alt="" />
 
                 </div>
                 <div className="home-text">

@@ -12,20 +12,20 @@ export default class Carasol extends Component {
     constructor(props) {
          super(props)
           this.state ={
-             image_style:{
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-             }
+            //  image_style:{
+            //     width: "100%",
+            //     height: "100%",
+            //     objectFit: "contain",
+            //  }
           }
     }
      
     render() {  
         return (  
             <Carousel autoPlay={true} showThumbs={false} infiniteLoop={true} interval={2000}>  
-                    <img style={this.state.image_style} src={Home_Page_Banner} />  
-                    <img   src={Home_Page_Banner2} />  
-                    <img   src={Home_Page_Banner3} />  
+                    {/* <img className='img-fluid'  src={Home_Page_Banner} />   */}
+                    <img  className='img-fluid'  src={Home_Page_Banner2} />  
+                    <img  className='img-fluid'  src={Home_Page_Banner3} />  
             </Carousel>  
         );  
     }  
