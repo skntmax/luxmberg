@@ -9,12 +9,12 @@ import {
   Link,
 } from "react-router-dom";
 
-
+import Login from './Components/Login'
 
 const router = createBrowserRouter([
     {
       path: "/",
-      element:<HomePage />,
+      element:<Login />,
     },
     {
       path: "about",
