@@ -1,13 +1,53 @@
-import React from "react";
+import React ,{useState ,useReducer, useEffect } from "react";
 import Header from "./header/Header";
 import SideBar from "./sidebar/SideBar";
-
+import { allProductsCategory } from "../actions/action";
+import constants from "../constants";
 const Dashboard = () => {
+    
+    
+    const reducer= (state , action)=>{
+        
+        switch(action.type){
+            case constants.PRODUCT_CATEGORIES :
+                {
+                return { ...state, PRODUCT_CATEGORIES:action.payload }     
+            } 
+            default:
+                return state 
+            }
+
+    }
+
+    const [state, dispatch] = useReducer(reducer, {})
+
+
+
+useEffect(()=>{
+
+(async function(){
+ let prd_cat = await allProductsCategory()
+     if(prd_cat.status){
+         dispatch({
+            type:constants.PRODUCT_CATEGORIES,
+            payload:prd_cat.result
+         })
+     }
+})()
+     
+     
+} ,[ ])
+
+
+
+
+const { PRODUCT_CATEGORIES }  = state
+
+console.log("PRODUCT_CATEGORIESPRODUCT_CATEGORIES" ,PRODUCT_CATEGORIES)
   return (
     <>
     <div id="layout-wrapper">
      <Header />
-     
       <div className="vertical-menu">
         <div data-simplebar="" className="h-100" >
          <SideBar />
@@ -258,7 +298,11 @@ const Dashboard = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
+
+          {
+            Array.isArray(PRODUCT_CATEGORIES) && PRODUCT_CATEGORIES.length>0? PRODUCT_CATEGORIES.map((ele=>{
+                return <React.Fragment>
+                      <tr>
                             <td
                               style={{
                                 color: "#ff8000",
@@ -271,14 +315,19 @@ const Dashboard = () => {
                             <td>
                               <h5 className="font-size-14 mb-1">
                                 <a href="profile.php" className="text-dark">
-                                  Pens 
+                                  {ele._doc?ele._doc.name:ele.name }
                                 </a>
                               </h5>
                               <p
                                 className="text-muted mb-0"
                                 style={{ color: "#00add2 !important" }}
                               >
-                                Metal Pens {" "}
+                                {ele.sub_menu ?
+                                 ele.sub_menu.map(item=> {
+                                return item.category? <span className="badge badge-success mx-1" style={{background:"green" , color:"white"}}>{item.category}</span>   : 
+                                <span className="badge badge-success mx-1" style={{background:"green" , color:"white"}}>{item.marker_category}</span>                                       
+                                 } ):"" }
+                                  
                                 <span className="badge border border-light rounded-circle bg-success p-1">
                                   <span className="visually-hidden">Online</span>
                                 </span>
@@ -293,7 +342,7 @@ const Dashboard = () => {
                                 <a
                                   href="javascript:void(0);"
                                   className="text-dark"
-                                >
+                                >   
                                   Jobs Applied (12)
                                 </a>
                               </h5>
@@ -580,650 +629,15 @@ const Dashboard = () => {
                               {/* MODEL CLOSED */}
                             </td>
                           </tr>
-                          <tr>
-                            <td
-                              style={{
-                                color: "#ff8000",
-                                fontSize: 15,
-                                fontFamily: "nunito"
-                              }}
-                            >
-                              RZG000091
-                            </td>
-                            <td>
-                              <h5 className="font-size-14 mb-1">
-                                <a href="profile.php" className="text-dark">
-                                  Satya Prakash
-                                </a>
-                              </h5>
-                              <p
-                                className="text-muted mb-0"
-                                style={{ color: "#00add2 !important" }}
-                              >
-                                Fresher{" "}
-                                <span className="badge border border-light rounded-circle bg-success p-1">
-                                  <span className="visually-hidden">Online</span>
-                                </span>
-                              </p>
-                              <p className="text-muted mb-0">
-                                satyaprakash@gmail.com
-                              </p>
-                              <p className="text-muted mb-0">99902434443</p>
-                            </td>
-                            <td>
-                              <h5 className="font-size-14 mb-1">
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  Jobs Applied (12)
-                                </a>
-                              </h5>
-                              <p className="text-muted mb-0">
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  <span style={{ color: "#c80064" }}>
-                                    Shortlisted (2){" "}
-                                  </span>
-                                </a>{" "}
-                                <br />
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  <span style={{ color: "#ff0000" }}>
-                                    Rejected (5)
-                                  </span>
-                                </a>{" "}
-                                <br />
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  <span style={{ color: "#008040" }}>
-                                    Subscription (2){" "}
-                                  </span>
-                                </a>
-                                <br />
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  <span style={{ color: "#009999" }}>
-                                    Saved Jobs (23)
-                                  </span>
-                                </a>{" "}
-                                <br />
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  <span style={{ color: "#ff00ff" }}>
-                                    Reviews(3){" "}
-                                  </span>
-                                </a>
-                                {/* <a href="javascript:void(0);" class="text-dark"><span style="color: #c80064;">Referred Jobs (1)</span></a> <br>
-                                                                <a href="javascript:void(0);" class="text-dark"><span style="color: #c80064;">Reviews(3) </span></a> <br>
-                                                                : 5 Min | <span style="color: #f46a6a;">Complete Required</span> : 500<br> <p class="text-muted mb-0"><i class="bx bx-calendar-event" style="color: #f46a6a;"></i> <strong>From</strong>  01-01-2021 <strong>to</strong> 02-02-2022  */}
-                              </p>{" "}
-                              <p />
-                            </td>
-                            <td>
-                              Completeness{" "}
-                              <span className="badge rounded-pill bg-success">
-                                90%
-                              </span>
-                              <br />
-                              <a href="javascript:void(0);" className="text-dark">
-                                <span style={{ color: "#008040" }}>
-                                  Recruiter Message (3){" "}
-                                </span>
-                              </a>{" "}
-                              <br />
-                              <a href="javascript:void(0);" className="text-dark">
-                                <span style={{ color: "#808040" }}>
-                                  Download Resume{" "}
-                                  <i className="bx bxs-cloud-download" />{" "}
-                                </span>
-                              </a>{" "}
-                              <br />
-                              <a href="javascript:void(0);" className="text-dark">
-                                <span style={{ color: "#444444" }}>
-                                  Transaction History (5){" "}
-                                </span>
-                              </a>{" "}
-                              <br />
-                            </td>
-                            <td>
-                              <button
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop3"
-                                className="btn btn-info waves-effect btn-label waves-light"
-                              >
-                                <i className="bx bx-street-view label-icon " />{" "}
-                                View Details{" "}
-                                {/* <span class="badge rounded-pill bg-danger">20</span> */}
-                              </button>
-                              {/* STATIC BACKDROP MODAL */}
-                              <div
-                                className="modal fade"
-                                id="staticBackdrop3"
-                                data-bs-backdrop="static"
-                                data-bs-keyboard="false"
-                                tabIndex={-1}
-                                role="dialog"
-                                aria-labelledby="staticBackdropLabel"
-                                aria-hidden="true"
-                              >
-                                <div
-                                  className="modal-dialog modal-dialog-centered modal-lg"
-                                  role="document"
-                                >
-                                  <div className="modal-content">
-                                    <div className="modal-header">
-                                      <h5
-                                        className="modal-title"
-                                        id="staticBackdropLabel"
-                                      >
-                                        Satya Prakash - Information
-                                      </h5>
-                                      <button
-                                        type="button"
-                                        className="btn-close"
-                                        data-bs-dismiss="modal"
-                                        aria-label="Close"
-                                      />
-                                    </div>
-                                    <div className="modal-body">
-                                      <p></p>
-                                      <table className="table table-striped mb-0">
-                                        <tbody>
-                                          <tr>
-                                            <td>Skills</td>
-                                            <td>PHP, Lamp, Java</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Certifications</td>
-                                            <td>GCP, CSM</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Current Company</td>
-                                            <td>Mount Talent</td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                      <p />
-                                    </div>
-                                    <div className="modal-footer">
-                                      <button
-                                        type="button"
-                                        className="btn btn-light"
-                                        data-bs-dismiss="modal"
-                                      >
-                                        Close
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              {/* MODEL CLOSED */}
-                            </td>
-                            <td>
-                              <ul className="list-inline font-size-20 contact-links mb-0">
-                                <li className="list-inline-item px-2">
-                                  <a
-                                    href="javascript: void(0);"
-                                    title="View Client"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop"
-                                  >
-                                    <i className="bx bxs-zoom-in" />
-                                  </a>
-                                </li>
-                                <li className="list-inline-item px-2">
-                                  <a
-                                    href="javascript: void(0);"
-                                    title="Edit User"
-                                  >
-                                    <i className="bx bx-edit" />
-                                  </a>
-                                </li>
-                                <li className="list-inline-item px-2">
-                                  <a
-                                    href="javascript: void(0);"
-                                    style={{ color: "red" }}
-                                    title="Delete User"
-                                  >
-                                    <i className="bx bx-trash" />
-                                  </a>
-                                </li>
-                              </ul>
-                              {/* STATIC BACKDROP MODAL */}
-                              <div
-                                className="modal fade"
-                                id="staticBackdrop"
-                                data-bs-backdrop="static"
-                                data-bs-keyboard="false"
-                                tabIndex={-1}
-                                role="dialog"
-                                aria-labelledby="staticBackdropLabel"
-                                aria-hidden="true"
-                              >
-                                <div
-                                  className="modal-dialog modal-dialog-centered modal-lg"
-                                  role="document"
-                                >
-                                  <div className="modal-content">
-                                    <div className="modal-header">
-                                      <h5
-                                        className="modal-title"
-                                        id="staticBackdropLabel"
-                                      >
-                                        Candidate Details
-                                      </h5>
-                                      <button
-                                        type="button"
-                                        className="btn-close"
-                                        data-bs-dismiss="modal"
-                                        aria-label="Close"
-                                      />
-                                    </div>
-                                    <div className="modal-body">
-                                      <p></p>
-                                      <table className="table table-striped mb-0">
-                                        <tbody>
-                                          <tr>
-                                            <td style={{ width: "32%" }}>ID</td>
-                                            <td>RZG000091</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Name</td>
-                                            <td>Satya Prakash</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Skills</td>
-                                            <td>PHP, Lamp, Java, GCP</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Certification</td>
-                                            <td>GCP, CSM</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Email</td>
-                                            <td>satyaprakash@gmail.co</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Phone No.</td>
-                                            <td>99902434443</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Current Organization</td>
-                                            <td>Mount Talent</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Notice Period</td>
-                                            <td>Immediate Joiners</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Address</td>
-                                            <td>H - 12, GNA2, Noida Extension</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Featured Profile Subscription</td>
-                                            <td>No</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Profile Status</td>
-                                            <td>
-                                              <span className="badge rounded-pill bg-success">
-                                                LIVE
-                                              </span>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                      <p />
-                                    </div>
-                                    <div className="modal-footer">
-                                      <button
-                                        type="button"
-                                        className="btn btn-light"
-                                        data-bs-dismiss="modal"
-                                      >
-                                        Close
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              {/* MODEL CLOSED */}
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              style={{
-                                color: "#ff8000",
-                                fontSize: 15,
-                                fontFamily: "nunito"
-                              }}
-                            >
-                              RZG000091
-                            </td>
-                            <td>
-                              <h5 className="font-size-14 mb-1">
-                                <a href="profile.php" className="text-dark">
-                                  Satya Prakash
-                                </a>
-                              </h5>
-                              <p
-                                className="text-muted mb-0"
-                                style={{ color: "#00add2 !important" }}
-                              >
-                                Fresher{" "}
-                                <span className="badge border border-light rounded-circle bg-success p-1">
-                                  <span className="visually-hidden">Online</span>
-                                </span>
-                              </p>
-                              <p className="text-muted mb-0">
-                                satyaprakash@gmail.com
-                              </p>
-                              <p className="text-muted mb-0">99902434443</p>
-                            </td>
-                            <td>
-                              <h5 className="font-size-14 mb-1">
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  Jobs Applied (12)
-                                </a>
-                              </h5>
-                              <p className="text-muted mb-0">
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  <span style={{ color: "#c80064" }}>
-                                    Shortlisted (2){" "}
-                                  </span>
-                                </a>{" "}
-                                <br />
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  <span style={{ color: "#ff0000" }}>
-                                    Rejected (5)
-                                  </span>
-                                </a>{" "}
-                                <br />
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  <span style={{ color: "#008040" }}>
-                                    Subscription (2){" "}
-                                  </span>
-                                </a>
-                                <br />
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  <span style={{ color: "#009999" }}>
-                                    Saved Jobs (23)
-                                  </span>
-                                </a>{" "}
-                                <br />
-                                <a
-                                  href="javascript:void(0);"
-                                  className="text-dark"
-                                >
-                                  <span style={{ color: "#ff00ff" }}>
-                                    Reviews(3){" "}
-                                  </span>
-                                </a>
-                                {/* <a href="javascript:void(0);" class="text-dark"><span style="color: #c80064;">Referred Jobs (1)</span></a> <br>
-                                                                <a href="javascript:void(0);" class="text-dark"><span style="color: #c80064;">Reviews(3) </span></a> <br>
-                                                                : 5 Min | <span style="color: #f46a6a;">Complete Required</span> : 500<br> <p class="text-muted mb-0"><i class="bx bx-calendar-event" style="color: #f46a6a;"></i> <strong>From</strong>  01-01-2021 <strong>to</strong> 02-02-2022  */}
-                              </p>{" "}
-                              <p />
-                            </td>
-                            <td>
-                              Completeness{" "}
-                              <span className="badge rounded-pill bg-success">
-                                90%
-                              </span>
-                              <br />
-                              <a href="javascript:void(0);" className="text-dark">
-                                <span style={{ color: "#008040" }}>
-                                  Recruiter Message (3){" "}
-                                </span>
-                              </a>{" "}
-                              <br />
-                              <a href="javascript:void(0);" className="text-dark">
-                                <span style={{ color: "#808040" }}>
-                                  Download Resume{" "}
-                                  <i className="bx bxs-cloud-download" />{" "}
-                                </span>
-                              </a>{" "}
-                              <br />
-                              <a href="javascript:void(0);" className="text-dark">
-                                <span style={{ color: "#444444" }}>
-                                  Transaction History (5){" "}
-                                </span>
-                              </a>{" "}
-                              <br />
-                            </td>
-                            <td>
-                              <button
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop3"
-                                className="btn btn-info waves-effect btn-label waves-light"
-                              >
-                                <i className="bx bx-street-view label-icon " />{" "}
-                                View Details{" "}
-                                {/* <span class="badge rounded-pill bg-danger">20</span> */}
-                              </button>
-                              {/* STATIC BACKDROP MODAL */}
-                              <div
-                                className="modal fade"
-                                id="staticBackdrop3"
-                                data-bs-backdrop="static"
-                                data-bs-keyboard="false"
-                                tabIndex={-1}
-                                role="dialog"
-                                aria-labelledby="staticBackdropLabel"
-                                aria-hidden="true"
-                              >
-                                <div
-                                  className="modal-dialog modal-dialog-centered modal-lg"
-                                  role="document"
-                                >
-                                  <div className="modal-content">
-                                    <div className="modal-header">
-                                      <h5
-                                        className="modal-title"
-                                        id="staticBackdropLabel"
-                                      >
-                                        Satya Prakash - Information
-                                      </h5>
-                                      <button
-                                        type="button"
-                                        className="btn-close"
-                                        data-bs-dismiss="modal"
-                                        aria-label="Close"
-                                      />
-                                    </div>
-                                    <div className="modal-body">
-                                      <p></p>
-                                      <table className="table table-striped mb-0">
-                                        <tbody>
-                                          <tr>
-                                            <td>Skills</td>
-                                            <td>PHP, Lamp, Java</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Certifications</td>
-                                            <td>GCP, CSM</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Current Company</td>
-                                            <td>Mount Talent</td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                      <p />
-                                    </div>
-                                    <div className="modal-footer">
-                                      <button
-                                        type="button"
-                                        className="btn btn-light"
-                                        data-bs-dismiss="modal"
-                                      >
-                                        Close
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              {/* MODEL CLOSED */}
-                            </td>
-                            <td>
-                              <ul className="list-inline font-size-20 contact-links mb-0">
-                                <li className="list-inline-item px-2">
-                                  <a
-                                    href="javascript: void(0);"
-                                    title="View Client"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop"
-                                  >
-                                    <i className="bx bxs-zoom-in" />
-                                  </a>
-                                </li>
-                                <li className="list-inline-item px-2">
-                                  <a
-                                    href="javascript: void(0);"
-                                    title="Edit User"
-                                  >
-                                    <i className="bx bx-edit" />
-                                  </a>
-                                </li>
-                                <li className="list-inline-item px-2">
-                                  <a
-                                    href="javascript: void(0);"
-                                    style={{ color: "red" }}
-                                    title="Delete User"
-                                  >
-                                    <i className="bx bx-trash" />
-                                  </a>
-                                </li>
-                              </ul>
-                              {/* STATIC BACKDROP MODAL */}
-                              <div
-                                className="modal fade"
-                                id="staticBackdrop"
-                                data-bs-backdrop="static"
-                                data-bs-keyboard="false"
-                                tabIndex={-1}
-                                role="dialog"
-                                aria-labelledby="staticBackdropLabel"
-                                aria-hidden="true"
-                              >
-                                <div
-                                  className="modal-dialog modal-dialog-centered modal-lg"
-                                  role="document"
-                                >
-                                  <div className="modal-content">
-                                    <div className="modal-header">
-                                      <h5
-                                        className="modal-title"
-                                        id="staticBackdropLabel"
-                                      >
-                                        Candidate Details
-                                      </h5>
-                                      <button
-                                        type="button"
-                                        className="btn-close"
-                                        data-bs-dismiss="modal"
-                                        aria-label="Close"
-                                      />
-                                    </div>
-                                    <div className="modal-body">
-                                      <p></p>
-                                      <table className="table table-striped mb-0">
-                                        <tbody>
-                                          <tr>
-                                            <td style={{ width: "32%" }}>ID</td>
-                                            <td>RZG000091</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Name</td>
-                                            <td>Satya Prakash</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Skills</td>
-                                            <td>PHP, Lamp, Java, GCP</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Certification</td>
-                                            <td>GCP, CSM</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Email</td>
-                                            <td>satyaprakash@gmail.co</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Phone No.</td>
-                                            <td>99902434443</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Current Organization</td>
-                                            <td>Mount Talent</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Notice Period</td>
-                                            <td>Immediate Joiners</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Address</td>
-                                            <td>H - 12, GNA2, Noida Extension</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Featured Profile Subscription</td>
-                                            <td>No</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Profile Status</td>
-                                            <td>
-                                              <span className="badge rounded-pill bg-success">
-                                                LIVE
-                                              </span>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                      <p />
-                                    </div>
-                                    <div className="modal-footer">
-                                      <button
-                                        type="button"
-                                        className="btn btn-light"
-                                        data-bs-dismiss="modal"
-                                      >
-                                        Close
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              {/* MODEL CLOSED */}
-                            </td>
-                          </tr>
+                 
+                </React.Fragment> 
+            })):"" 
+            }
+
+      
+                         
+                        
+                          
                         </tbody>
                       </table>
                     </div>

@@ -1,0 +1,3 @@
+export default {
+    PRODUCT_CATEGORIES:"PRODUCT_CATEGORIES"
+}
