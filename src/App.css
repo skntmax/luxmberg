@@ -73,7 +73,7 @@ header {
   top: 0;
   right: 0;
   background: #ed1b24;
-  display: flex;
+  /* display: flex; */
   z-index: 1000;
   align-items: center;
   justify-content: space-between;

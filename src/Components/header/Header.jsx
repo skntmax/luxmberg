@@ -6,19 +6,19 @@ function Header() {
   <div className="navbar-header">
     <div className="d-flex">
       {/* LOGO */}
-      <div className="navbar-brand-box">
-        <a href="<?=$URLadmin?>/dashboard.php" className="logo logo-dark">
+      <div className="navbar-brand-box align-self-center">
+        <a href="<?=$URLadmin?>/dashboard.php" className="">
           <span className="logo-sm">
             <img
               src="https://luxor.in/media/logo/stores/1/luxor-logo-pic.png"
-              style={{ width: 112, marginBottom: 5, marginRight: 92 }}
+              // style={{ width: 112, marginBottom: 5, marginRight: 92 }}
             />
           </span>
           <span
             className="logo-lg"
             style={{ fontSize: 21, color: "#9ec035", fontFamily: "oswald" }}
           >
-            <span
+            {/* <span
               href="dashboard.php"
               className=""
               style={{
@@ -32,7 +32,7 @@ function Header() {
                 src="https://luxor.in/media/logo/stores/1/luxor-logo-pic.png"
                 style={{ width: 112, marginBottom: 5, marginRight: 92 }}
               />
-            </span>
+            </span> */}
             {/* <img src="assets/images/logo-light.png" alt="" height="19"> */}
           </span>
         </a>
