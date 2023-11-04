@@ -1,25 +1,17 @@
 import React from "react";
+import Header from "./header/Header";
 
 const Dashboard = () => {
   return (
     <>
     <div id="layout-wrapper">
-      {/*?php include('header.php'); ?*/}
-      {/* ========== Left Sidebar Start ========== */}
+     <Header />
+     
       <div className="vertical-menu">
-        <div data-simplebar="" className="h-100">
-          {/*- Sidemenu */}
-          {/*?php
-                          include('sidebar.php');
-                      ?*/}
-          {/* Sidebar */}
+        <div data-simplebar="" className="h-100" >
         </div>
       </div>
-      {/* Left Sidebar End */}
-      {/* ============================================================== */}
-      {/* Start right Content here */}
-      {/* ============================================================== */}
-      <div className="main-content">
+          <div className="main-content">
         <div className="page-content">
           <div className="container-fluid">
             {/* start page title */}
@@ -27,7 +19,7 @@ const Dashboard = () => {
               <div className="col-12">
                 <div className="page-title-box d-sm-flex align-items-center justify-content-between">
                   <h4 className="mb-sm-0 font-size-18">
-                    Rozgar Administrator Control Panel V1.0{" "}
+                    Luxorpen Administrator Control Panel V1.0{" "}
                   </h4>
                   <div className="page-title-right">
                     <ol className="breadcrumb m-0">
@@ -51,7 +43,7 @@ const Dashboard = () => {
                       <div className="col-7">
                         <div className="text-primary p-3">
                           <h5 className="text-primary">Welcome Back !</h5>
-                          <p>Rozgar Dashboard</p>
+                          <p>Luxorpen Dashboard</p>
                         </div>
                       </div>
                       <div className="col-5 align-self-end">
@@ -85,11 +77,11 @@ const Dashboard = () => {
                           <div className="row">
                             <div className="col-6">
                               <h5 className="font-size-15">125</h5>
-                              <p className="text-muted mb-0">Candiates</p>
+                              <p className="text-muted mb-0">CATEGORIES</p>
                             </div>
                             <div className="col-6">
                               <h5 className="font-size-15">1245</h5>
-                              <p className="text-muted mb-0">Employers</p>
+                              <p className="text-muted mb-0">PRODUCTS</p>
                             </div>
                           </div>
                           <div className="mt-4">
@@ -106,7 +98,9 @@ const Dashboard = () => {
                     </div>
                   </div>
                 </div>
-                <div className="card">
+
+
+                {/* <div className="card">
                   <div className="card-body">
                     <h4 className="card-title mb-4">Monthly Jobs</h4>
                     <div className="row">
@@ -140,6 +134,9 @@ const Dashboard = () => {
                     </p>
                   </div>
                 </div>
+                 */}
+                  
+
               </div>
               <div className="col-xl-8">
                 <div className="row">
@@ -148,7 +145,7 @@ const Dashboard = () => {
                       <div className="card-body">
                         <div className="d-flex">
                           <div className="flex-grow-1">
-                            <p className="text-muted fw-medium">Candidates</p>
+                            <p className="text-muted fw-medium">CATEGORIES</p>
                             <h4 className="mb-0">12351</h4>
                           </div>
                           <div className="flex-shrink-0 align-self-center">
@@ -167,7 +164,7 @@ const Dashboard = () => {
                       <div className="card-body">
                         <div className="d-flex">
                           <div className="flex-grow-1">
-                            <p className="text-muted fw-medium">Employers</p>
+                            <p className="text-muted fw-medium">PRODUCTS</p>
                             <h4 className="mb-0">145</h4>
                           </div>
                           <div className="flex-shrink-0 align-self-center">
@@ -186,7 +183,7 @@ const Dashboard = () => {
                       <div className="card-body">
                         <div className="d-flex">
                           <div className="flex-grow-1">
-                            <p className="text-muted fw-medium">Jobs</p>
+                            <p className="text-muted fw-medium">RECENT</p>
                             <h4 className="mb-0">12111</h4>
                           </div>
                           <div className="flex-shrink-0 align-self-center">
@@ -206,7 +203,7 @@ const Dashboard = () => {
                   <div className="card-body">
                     <div className="d-sm-flex flex-wrap">
                       <h4 className="card-title mb-4">
-                        Monthly Jobs - Candidate Hired
+                        Monthly Products -  released
                       </h4>
                       <div className="ms-auto">
                         <ul className="nav nav-pills">
@@ -243,7 +240,7 @@ const Dashboard = () => {
               <div className="col-lg-12">
                 <div className="card">
                   <div className="card-body">
-                    <h4 className="card-title mb-4">Latest Candiates</h4>
+                    <h4 className="card-title mb-4">Latest Products</h4>
                     <div className="table-responsive">
                       <table className="table align-middle table-nowrap table-hover">
                         <thead className="table-light">
@@ -251,8 +248,8 @@ const Dashboard = () => {
                             <th scope="col" style={{ width: 70 }}>
                               ID
                             </th>
-                            <th scope="col">Candidate Information</th>
-                            <th scope="col">Rozgar Stats</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Product</th>
                             <th scope="col">Profile Status</th>
                             <th scope="col">Other Information </th>
                             <th scope="col">Action</th>
