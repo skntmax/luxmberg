@@ -10,7 +10,7 @@ function Header() {
         <a href="<?=$URLadmin?>/dashboard.php" className="logo logo-dark">
           <span className="logo-sm">
             <img
-              src="assets/images/rozgar.png"
+              src="https://luxor.in/media/logo/stores/1/luxor-logo-pic.png"
               style={{ width: 112, marginBottom: 5, marginRight: 92 }}
             />
           </span>
@@ -29,7 +29,7 @@ function Header() {
               }}
             >
               <img
-                src="assets/images/rozgar.png"
+                src="https://luxor.in/media/logo/stores/1/luxor-logo-pic.png"
                 style={{ width: 112, marginBottom: 5, marginRight: 92 }}
               />
             </span>

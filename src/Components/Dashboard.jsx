@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./header/Header";
+import SideBar from "./sidebar/SideBar";
 
 const Dashboard = () => {
   return (
@@ -9,6 +10,7 @@ const Dashboard = () => {
      
       <div className="vertical-menu">
         <div data-simplebar="" className="h-100" >
+         <SideBar />
         </div>
       </div>
           <div className="main-content">
@@ -18,7 +20,7 @@ const Dashboard = () => {
             <div className="row">
               <div className="col-12">
                 <div className="page-title-box d-sm-flex align-items-center justify-content-between">
-                  <h4 className="mb-sm-0 font-size-18">
+                  <h4 className="mb-sm-0 font-size-18 my-2">
                     Luxorpen Administrator Control Panel V1.0{" "}
                   </h4>
                   <div className="page-title-right">
@@ -269,22 +271,22 @@ const Dashboard = () => {
                             <td>
                               <h5 className="font-size-14 mb-1">
                                 <a href="profile.php" className="text-dark">
-                                  Satya Prakash
+                                  Pens 
                                 </a>
                               </h5>
                               <p
                                 className="text-muted mb-0"
                                 style={{ color: "#00add2 !important" }}
                               >
-                                Fresher{" "}
+                                Metal Pens {" "}
                                 <span className="badge border border-light rounded-circle bg-success p-1">
                                   <span className="visually-hidden">Online</span>
                                 </span>
                               </p>
                               <p className="text-muted mb-0">
-                                satyaprakash@gmail.com
+                                {/* satyaprakash@gmail.com */}
                               </p>
-                              <p className="text-muted mb-0">99902434443</p>
+                              {/* <p className="text-muted mb-0">99902434443</p> */}
                             </td>
                             <td>
                               <h5 className="font-size-14 mb-1">
