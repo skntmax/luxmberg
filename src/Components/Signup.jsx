@@ -1,6 +1,6 @@
 import React from "react";
 
-function Login() {
+const Signup = () => {
   return (
     <div>
       <div className=" py-5">
@@ -18,13 +18,35 @@ function Login() {
                     <form className="form-horizontal" action="" method="POST">
                       <div className="mb-3">
                         <label for="username" className="form-label fs-14">
-                          Username
+                          Full Name
                         </label>
                         <input
                           type="text"
                           className="form-control fs-14 shadow-none"
-                          id="username"
-                          placeholder="Enter username"
+                          id="FullName"
+                          placeholder="Enter Fullname"
+                        />
+                      </div>
+                      <div className="mb-3">
+                        <label for="email" className="form-label fs-14">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          className="form-control fs-14 shadow-none"
+                          id="Email"
+                          placeholder="Enter email"
+                        />
+                      </div>
+                      <div className="mb-3">
+                        <label for="number" className="form-label fs-14">
+                          Phone No
+                        </label>
+                        <input
+                          type="number"
+                          className="form-control fs-14 shadow-none"
+                          id="Phone no"
+                          placeholder="Enter Phone No"
                         />
                       </div>
 
@@ -38,13 +60,6 @@ function Login() {
                             aria-label="Password"
                             aria-describedby="password-addon"
                           />
-                          {/* <button
-                            className="btn btn-light "
-                            type="button"
-                            id="password-addon"
-                          >
-                            <i className="mdi mdi-eye-outline"></i>
-                          </button> */}
                         </div>
                       </div>
 
@@ -67,15 +82,8 @@ function Login() {
                           className="btn btn-primary bg_lightred text-white fs-16"
                           type="submit"
                         >
-                          Log In
+                          Sign Up
                         </button>
-                      </div>
-
-                      <div className="mt-4 text-center">
-                        <a href="" className="text-muted">
-                          <i className="mdi mdi-lock me-1"></i> Forgot your
-                          password?
-                        </a>
                       </div>
                     </form>
                   </div>
@@ -87,6 +95,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
-export default Login;
+export default Signup;
