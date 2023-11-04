@@ -322,15 +322,17 @@ console.log("PRODUCT_CATEGORIESPRODUCT_CATEGORIES" ,PRODUCT_CATEGORIES)
                                 className="text-muted mb-0"
                                 style={{ color: "#00add2 !important" }}
                               >
+                                  {ele.sub_menu? <span className="badge border border-light rounded-circle bg-success p-1">
+                                  <span className="visually-hidden">Online</span>
+                                </span>  :"" }
+                                 
+                                  
                                 {ele.sub_menu ?
                                  ele.sub_menu.map(item=> {
                                 return item.category? <span className="badge badge-success mx-1" style={{background:"green" , color:"white"}}>{item.category}</span>   : 
                                 <span className="badge badge-success mx-1" style={{background:"green" , color:"white"}}>{item.marker_category}</span>                                       
                                  } ):"" }
-                                  
-                                <span className="badge border border-light rounded-circle bg-success p-1">
-                                  <span className="visually-hidden">Online</span>
-                                </span>
+                              
                               </p>
                               <p className="text-muted mb-0">
                                 {/* satyaprakash@gmail.com */}
