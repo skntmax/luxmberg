@@ -1,8 +1,9 @@
 import React from "react";
+// import './assets/css/hp.css'
 
+// import Image23 from './assets/award1.png'
 function SideBar() {
   return (
-    
     <div id="sidebar-menu" className="my-2">
       <ul class="metismenu list-unstyled" id="side-menu">
         <li class="menu-title ">Menu</li>
@@ -23,12 +24,10 @@ function SideBar() {
           <a class="waves-effect" href="/employer-list">
             <i class="bx bx-building-house"></i>
             <span class="badge rounded-pill bg-warning float-end">9850</span>
-            <span>Total sub categories  </span>
+            <span>Total sub categories </span>
           </a>
         </li>
 
-
-        
         {/* <li class="menu-title">EMPLOYERS</li>
         <li>
           <a class="has-arrow waves-effect">
@@ -53,19 +52,44 @@ function SideBar() {
 
 
          */}
+
         <li class="menu-title">JOBS</li>
-        <li>
-          <a class="has-arrow waves-effect">
-            <i class="bx bxs-help-circle"></i>
-            <span>Job FAQs</span>
-          </a>
-        </li>
-        <li>
-          <a class="has-arrow waves-effect">
-            <i class="bx bx-task"></i>
-            <span>Jobs</span>
-          </a>
-        </li>
+
+        <div className="dropdown mb-3 d-block px-3">
+          <button type="button" className="btn  waves-effect">
+            <span className="" key="t-henry">
+              Job FAQs
+            </span>
+            <i className="mdi ms-2 mdi-chevron-down" />
+          </button>
+          <div className="dropdown-menu dropdown-menu-end">
+            {/* item*/}
+            <a className="dropdown-item" href="">
+              <span key="t-profile">Job 1</span>
+            </a>
+            <a className="dropdown-item" href="">
+              <span key="t-profile">Job 2</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="dropdown mb-3 d-block px-3">
+          <button type="button" className="btn  waves-effect">
+            <span className="" key="t-henry">
+              Jobs
+            </span>
+            <i className="mdi ms-2 mdi-chevron-down" />
+          </button>
+          <div className="dropdown-menu dropdown-menu-end">
+            {/* item*/}
+            <a className="dropdown-item" href="">
+              <span key="t-profile">Premium</span>
+            </a>
+            <a className="dropdown-item" href="">
+              <span key="t-profile">paid</span>
+            </a>
+          </div>
+        </div>
         <li>
           <a class="has-arrow waves-effect">
             <i class="bx bx-shield"></i>
@@ -146,7 +170,7 @@ function SideBar() {
         </li>
         <li>
           <a class="has-arrow waves-effect">
-            <i class="fa fa-paint-brush" style={{fontSize: "18px"}}></i>
+            <i class="fa fa-paint-brush" style={{ fontSize: "18px" }}></i>
             <span>Banner</span>
           </a>
         </li>

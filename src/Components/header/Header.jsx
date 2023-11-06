@@ -352,15 +352,15 @@ function Header() {
         </button>
         <div className="dropdown-menu dropdown-menu-end">
           {/* item*/}
-          <a className="dropdown-item" href="profile.php">
+          <a className="dropdown-item" href="">
             <i className="bx bx-user font-size-16 align-middle me-1" />{" "}
             <span key="t-profile">Profile</span>
           </a>
-          <a className="dropdown-item d-block" href="update-profile.php">
+          <a className="dropdown-item d-block" href="">
             <i className="bx bx-wrench font-size-16 align-middle me-1" />{" "}
             <span key="t-settings">Update Profile</span>
           </a>
-          <a className="dropdown-item" href="auth-lock-screen.php">
+          <a className="dropdown-item" href="">
             <i className="bx bx-lock-open font-size-16 align-middle me-1" />{" "}
             <span key="t-lock-screen">Lock screen</span>
           </a>
