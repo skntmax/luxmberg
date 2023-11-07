@@ -1,0 +1,10 @@
+version: '3'
+services:
+  nextapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /var/www/luxmberg:/var/www/luxmberg
+    ports:
+      - 8003:3000
